@@ -62,11 +62,11 @@ async function routeFileExists(root, site, path) {
 }
 
 function routeUrl(site, path) {
-  return path === "" ? `${site.publicOrigin}/` : `${site.publicOrigin}/${path}`;
+  return `${site.publicOrigin}${site.basePath}${path}`;
 }
 
 async function checkUrl(root, site, url, path, label) {
-  const accepted = path === "" ? [site.publicOrigin, `${site.publicOrigin}/`] : [routeUrl(site, path)];
+  const accepted = path === "" ? [routeUrl(site, ""), routeUrl(site, "").replace(/\/$/u, "")] : [routeUrl(site, path)];
   if (!accepted.includes(url)) throw new Error(`${label}: oczekiwano ${accepted.join(" lub ")}, jest ${url}`);
   if (!(await routeFileExists(root, site, path))) throw new Error(`${label}: trasa "${path}" nie ma pliku w site/`);
 }

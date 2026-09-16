@@ -27,9 +27,9 @@
     "pl-PL": "Wersja 1.0.3: wydanie na Androida tą samą drogą co iOS oraz aktualizacje poprawek środowiska. Bez zmian w działaniu aplikacji.",
     "en-GB": "Version 1.0.3: Android release through the same pipeline as iOS and SDK patch updates. No changes to app behaviour."
   },
-  "privacyPolicyUrl": "https://alarm-soia.expo.app/polityka-prywatnosci",
-  "supportUrl": "https://alarm-soia.expo.app/pomoc",
-  "marketingUrl": "https://alarm-soia.expo.app",
+  "privacyPolicyUrl": "https://kgpsp.github.io/alarm-soia-public/polityka-prywatnosci",
+  "supportUrl": "https://kgpsp.github.io/alarm-soia-public/pomoc",
+  "marketingUrl": "https://kgpsp.github.io/alarm-soia-public/",
   "primaryCategory": "UTILITIES",
   "secondaryCategory": "WEATHER",
   "publisherName": "Komenda Główna Państwowej Straży Pożarnej",

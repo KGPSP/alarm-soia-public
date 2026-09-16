@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alarm-soia.expo.app/sitemap.xml
+Sitemap: https://kgpsp.github.io/alarm-soia-public/sitemap.xml

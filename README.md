@@ -3,7 +3,7 @@
 Oficjalne informacje, polityka prywatności, pomoc oraz materiały sklepowe dla aplikacji ALARM.SOIA
 wydawanej przez Komendę Główną Państwowej Straży Pożarnej.
 
-Strona produkcyjna (planowana, EAS Hosting): <https://alarm-soia.expo.app/>
+Strona produkcyjna (GitHub Pages): <https://kgpsp.github.io/alarm-soia-public/>
 
 Wzorzec strukturalny: publiczna strona bliźniaczej aplikacji KG PSP (statyczny HTML, zero
 zależności, skrypt kontrolny w Node). Treści są własne i wynikają z faktów o aplikacji ALARM.SOIA
@@ -35,8 +35,9 @@ ani tabletów z Androidem (patrz „Decyzje przed wysyłką”).
 Linki wewnętrzne w HTML są względne i bez rozszerzeń (`href="pomoc"`, `href="assets/…"`),
 a `canonical`, `og:url`, `sitemap.xml` i `robots.txt` są absolutne z `publicOrigin`. Jedyny wyjątek
 to `404.html`: hosting serwuje ją pod dowolną, także zagnieżdżoną ścieżką (`/pomoc/x`), więc jej
-linki i arkusz stylów zaczynają się od korzenia (`href="/pomoc"`, `href="/assets/…"`) — skrypt
-kontrolny wymaga tego dla trasy z `noindex` i zabrania na pozostałych.
+linki i arkusz stylów zaczynają się od `basePath` (`href="/alarm-soia-public/pomoc"`,
+`href="/alarm-soia-public/assets/…"`) — skrypt kontrolny wymaga tego dla trasy z `noindex`
+i zabrania linków od korzenia na pozostałych.
 
 ## Kontrola lokalna
 
@@ -53,46 +54,32 @@ wypisuje raport JSON i kończy się kodem 1 przy pierwszym naruszeniu.
 Witryna nie ma zależności produkcyjnych ani deweloperskich, analityki, formularzy, skryptów,
 zewnętrznych fontów ani plików cookie. Wymagany Node ≥ 24 (`node --test`, ESM, `fs.cp`).
 
-## Publikacja przez Expo (EAS Hosting)
+## Publikacja: GitHub Pages
 
-Katalog `site/` jest wysyłany w całości jako strona statyczna do projektu `@kg-psp/alarm-soia`
-(`app.json`: `slug`, `owner`, `extra.eas.projectId`). Wymagane: `eas-cli` i zalogowane konto
-z dostępem do organizacji `kg-psp` (`eas whoami`).
+Strona żyje pod `https://kgpsp.github.io/alarm-soia-public/` — tak jak bliźniacza witryna drugiej
+aplikacji KG PSP (decyzja Michała z 2026-09-16, zastępuje pierwsze wdrożenie na EAS Hosting z tego
+samego dnia).
+Wdraża ją workflow `.github/workflows/pages.yml`: na każdy push do `main` uruchamia `npm ci`,
+`npm test` i `npm run check`, po czym wysyła katalog `site/` przez `actions/upload-pages-artifact`
+i `actions/deploy-pages` (ustawienie Pages: „GitHub Actions”, bez Jekylla, HTTPS wymuszone).
+Nie ma osobnego kroku po stronie człowieka — merge do `main` = publikacja; podgląd zmian przed
+merge'em daje `validate.yml` na pull requeście plus lokalny serwer statyczny na `site/`.
 
-```sh
-eas deploy --export-dir site --dry-run   # tylko deploy.tar.gz w katalogu strony, nic nie publikuje
-eas deploy --export-dir site             # deploy podglądowy; przy pierwszym uruchomieniu wybór nazwy podglądu: alarm-soia
-eas deploy --export-dir site --prod      # publikacja produkcyjna → https://alarm-soia.expo.app/
-```
+`publicOrigin` (`https://kgpsp.github.io`) i `basePath` (`/alarm-soia-public/`) w `data/site.json`
+są źródłem dla `canonical`, `og:url`, `og:image`, `sitemap.xml`, `robots.txt`, linków w `404.html`
+i adresów w `data/app-store.json` / `data/google-play.json` — skrypt kontrolny wymusza zgodność.
+Adres polityki prywatności jest kontraktem zewnętrznym (stała w aplikacji, wpisy w konsolach):
+zmiana origin lub ścieżki = nowa wersja aplikacji i edycja obu konsol.
 
-Nazwa podglądu (`alarm-soia`) staje się subdomeną produkcyjną `alarm-soia.expo.app` — musi zgadzać
-się z `publicOrigin` w `data/site.json`. Jeśli przy pierwszym deployu nazwa okaże się zajęta,
-wybierz inną (np. `alarm-soia-kgpsp`) i wykonaj podmianę origin opisaną niżej **przed** `--prod`.
-Nie podawaj `--environment` (strona nie potrzebuje zmiennych EAS) i nie trzymaj pliku `.env`
-w tym katalogu. Wycofanie: `eas deploy:alias --prod --id=<poprzedni deployment>`.
+### Alternatywa: EAS Hosting
 
-Do CI: token dostępu robota organizacji jako zmienna środowiskowa `EXPO_TOKEN` oraz
-`eas deploy --non-interactive --prod --export-dir site`. Pierwszy deploy (wybór nazwy podglądu)
-wykonuje człowiek.
-
-### Alternatywa: GitHub Pages
-
-Kod nie zależy od hostingu — linki wewnętrzne są względne (poza `404.html`, której linki od korzenia
-trzeba by poprzedzić `basePath`). Przeniesienie na GitHub Pages
-(repozytorium publiczne `KGPSP/alarm-soia-public`, gałąź `main`, katalog `site/` przez
-`actions/deploy-pages` albo kopia zawartości `site/` do korzenia) wymaga tylko jednej podmiany
-origin: nowa wartość `publicOrigin` w `data/site.json` (np. `https://kgpsp.github.io`) i — jeśli
-strona ma żyć pod ścieżką — `basePath` (np. `/alarm-soia-public/`; wtedy `canonical` to
-`publicOrigin + basePath + path`), a następnie regeneracja wartości absolutnych:
-
-```sh
-grep -rl "https://alarm-soia.expo.app" site data | xargs sed -i '' 's#https://alarm-soia.expo.app#https://kgpsp.github.io/alarm-soia-public#g'
-npm test && npm run check
-```
-
-Przy ścieżce bazowej innej niż `/` trzeba też rozszerzyć `scripts/check-site.mjs` o `basePath`
-w `canonicalFor` (dziś skrypt wymaga `basePath: "/"`). Ta alternatywa nie jest zaimplementowana —
-decyzja o hostingu należy do KG PSP.
+Kod nie zależy od hostingu — linki wewnętrzne są względne, tylko `404.html` używa `basePath`.
+Powrót na EAS Hosting (`https://alarm-soia.expo.app`, projekt `@kg-psp/alarm-soia`) wymaga
+`app.json` ze `slug`/`owner`/`extra.eas.projectId`, podmiany `publicOrigin` na
+`https://alarm-soia.expo.app` i `basePath` na `/` w `data/site.json`, regeneracji wartości
+absolutnych (`grep -rl kgpsp.github.io/alarm-soia-public site data`) oraz
+`eas deploy --export-dir site --prod`. Ta ścieżka została wykonana 2026-09-16 i wycofana tego
+samego dnia (deployment usunięty).
 
 ## Decyzje przed wysyłką
 
@@ -110,10 +97,10 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
    konta organizacji; `data/google-play-declarations.json` → `developerProfile.phone`.
 5. **Pismo do deklaracji „Government apps” (Google Play)** — dokument KG PSP na papierze firmowym
    z danymi kontaktowymi do weryfikacji; konto organizacji w domenie `kg.straz.gov.pl`.
-6. **Nazwa podglądu EAS** — zrobione 2026-09-16: `alarm-soia` zarezerwowana przy pierwszym
-   wdrożeniu (`eas deploy --prod --dev-domain alarm-soia`), produkcja żyje pod
-   `https://alarm-soia.expo.app`; `publicOrigin` i adresy w `data/` są z nią zgodne. Kolejne wdrożenia:
-   `eas deploy --export-dir site --prod` z katalogu tego repozytorium (deploy nie rusza sam z GitHuba).
+6. **Hosting** — rozstrzygnięte 2026-09-16: GitHub Pages pod `https://kgpsp.github.io/alarm-soia-public/`
+   (decyzja Michała; pierwsze wdrożenie na EAS Hosting `alarm-soia.expo.app` z tego samego dnia
+   wycofane, deployment usunięty, `app.json` usunięty z repo). Adres polityki w aplikacji i w konsolach
+   wskazuje GitHub Pages; zmiana origin = nowa wersja aplikacji i edycja obu konsol.
 7. **Zrzuty tabletów Android (opcjonalne)** — aplikacja jest dostępna na tabletach Android
    (`supports-screens`); zrzuty 7"/10" nie są wymagane do publikacji, ale Play może je promować.
 8. **Odświeżenie zrzutów przed wydaniem publicznym** — obecne zrzuty pochodzą z buildu testowego

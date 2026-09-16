@@ -20,25 +20,28 @@ test("SITE-ROUTES publikuje 9 płaskich tras z data/site.json: lang=pl, linki wz
 
   assert.equal(report.routeCount, 9);
   assert.equal(report.language, "pl");
-  assert.equal(report.publicOrigin, "https://alarm-soia.expo.app");
-  assert.equal(report.basePath, "/");
+  assert.equal(report.publicOrigin, "https://kgpsp.github.io");
+  assert.equal(report.basePath, "/alarm-soia-public/");
   assert.deepEqual(
     site.routes.map((route) => route.file),
     ["index.html", "polityka-prywatnosci.html", "pomoc.html", "bezpieczenstwo.html", "wydania.html", "dane-i-prywatnosc.html", "dostepnosc.html", "informacje-prawne.html", "404.html"],
   );
   assert.equal(report.sitemapRoutes.length, 8);
-  assert.ok(report.sitemapRoutes.every((url) => url.startsWith(`${site.publicOrigin}/`)));
+  assert.ok(report.sitemapRoutes.every((url) => url.startsWith(`${site.publicOrigin}${site.basePath}`)));
   assert.ok(!report.sitemapRoutes.some((url) => url.endsWith("/404")));
 
   for (const route of site.routes) {
     const html = await page(route.file);
-    const canonical = route.path === "" ? `${site.publicOrigin}/` : `${site.publicOrigin}/${route.path}`;
+    const canonical = `${site.publicOrigin}${site.basePath}${route.path}`;
     assert.match(html, /<html lang="pl">/u, route.file);
     assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`), `${route.file}: canonical`);
     if (route.noindex) {
-      // Strona błędu jest serwowana pod dowolną ścieżką — linki od korzenia, nie względne.
-      assert.match(html, /<link rel="stylesheet" href="\/assets\/css\/alarm-[a-f0-9]{8}\.css">/u, `${route.file}: arkusz od korzenia`);
-      assert.doesNotMatch(html, /(?:href|src)="(?!\/|#|mailto:|https?:)[^"]*"/u, `${route.file}: link względny na stronie błędu`);
+      // Strona błędu jest serwowana pod dowolną ścieżką — linki od basePath, nie względne.
+      assert.ok(html.includes(`<link rel="stylesheet" href="${site.basePath}assets/css/alarm-`), `${route.file}: arkusz od basePath`);
+      for (const [, link] of html.matchAll(/(?:href|src)="([^"#][^"]*)"/gu)) {
+        if (/^(?:https?:|mailto:)/u.test(link)) continue;
+        assert.ok(link.startsWith(site.basePath), `${route.file}: link ${link} nie zaczyna się od ${site.basePath}`);
+      }
     } else {
       assert.doesNotMatch(html, /href="\/[^"]*"/u, `${route.file}: link bezwzględny`);
     }
@@ -51,7 +54,7 @@ test("SITE-ROUTES publikuje 9 płaskich tras z data/site.json: lang=pl, linki wz
   assert.doesNotMatch(notFound, /aria-current/u);
   const robots = await readFile(join(root, "site", "robots.txt"), "utf8");
   assert.match(robots, /^Allow: \/$/mu);
-  assert.ok(robots.includes(`Sitemap: ${site.publicOrigin}/sitemap.xml`));
+  assert.ok(robots.includes(`Sitemap: ${site.publicOrigin}${site.basePath}sitemap.xml`));
 });
 
 test("SITE-CHECK kończy się bez naruszeń: zero zewnętrznych zasobów runtime, formularzy, trackerów i zakazanych wzorców; CSS z fingerprintem; kontrast ≥ 4,5:1", async () => {

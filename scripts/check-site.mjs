@@ -30,7 +30,9 @@ const forbiddenRepositoryPatterns = [
   /\/Users\//u,
   /KGPSP\/alert\.soia\.info/u,
   /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/u,
-  /(?:secret|token|password)\s*[:=]/iu,
+  // `id-token: write` w workflow Pages to nazwa uprawnienia OIDC, nie sekret — stąd wykluczenie
+  // słowa poprzedzonego myślnikiem lub znakiem słowa (np. `id-token:`), reszta jak dotąd.
+  /(?<![\w-])(?:secret|token|password)\s*[:=]/iu,
   /\bAKIA[0-9A-Z]{16}\b/u,
 ];
 const forbiddenFileNames = [/^\.env/u, /(?:^|\/)\.env/u, /eas\.json$/u, /credentials?/iu, /\.soiaaut[h]$/u, /\.p8$/u, /\.p12$/u, /\.keystore$/u];
@@ -121,7 +123,7 @@ async function readJson(root, name) {
 }
 
 function canonicalFor(site, route) {
-  return route.path === "" ? `${site.publicOrigin}/` : `${site.publicOrigin}/${route.path}`;
+  return `${site.publicOrigin}${site.basePath}${route.path}`;
 }
 
 function escapeRegExp(value) {
@@ -160,16 +162,17 @@ function attributeValues(fragment, attribute) {
   return values;
 }
 
-// rootAbsolute: strona 404 jest serwowana pod dowolną (także zagnieżdżoną) ścieżką, więc jej linki
-// muszą zaczynać się od korzenia (basePath "/"); pozostałe strony używają linków względnych.
-function internalTarget(siteRoot, routeByPath, currentFile, value, rootAbsolute = false) {
+// absolutePrefix: strona 404 jest serwowana pod dowolną (także zagnieżdżoną) ścieżką, więc jej linki
+// muszą zaczynać się od basePath (np. "/alarm-soia-public/"); pozostałe strony używają linków względnych.
+function internalTarget(siteRoot, routeByPath, currentFile, value, absolutePrefix = null) {
   let clean = value.split("#")[0].split("?")[0];
   if (clean === "" || /^(?:mailto:|tel:|https?:\/\/)/iu.test(clean)) return null;
   if (clean.startsWith("/")) {
-    if (!rootAbsolute) throw new Error(`Link bezwzględny zamiast względnego: ${value} w ${currentFile}`);
-    clean = clean.slice(1);
+    if (!absolutePrefix) throw new Error(`Link bezwzględny zamiast względnego: ${value} w ${currentFile}`);
+    if (!clean.startsWith(absolutePrefix)) throw new Error(`Link od korzenia poza basePath ${absolutePrefix}: ${value} w ${currentFile}`);
+    clean = clean.slice(absolutePrefix.length);
     if (clean === "") return resolve(siteRoot, "index.html");
-  } else if (rootAbsolute) {
+  } else if (absolutePrefix) {
     throw new Error(`Link względny na stronie błędu serwowanej pod dowolną ścieżką: ${value} w ${currentFile}`);
   }
   if (clean === "." || clean === "./") return resolve(siteRoot, "index.html");
@@ -194,8 +197,8 @@ function checkPageStructure(site, route, html, file) {
   if (!html.includes(`<meta property="og:url" content="${canonical}">`)) problems.push("og:url różny od canonical");
   if (!/<meta property="og:title" content="[^"]+">/u.test(html)) problems.push("brak og:title");
   if (!/<meta property="og:description" content="[^"]+">/u.test(html)) problems.push("brak og:description");
-  if (!html.includes(`<meta property="og:image" content="${site.publicOrigin}/assets/og/og-image.png">`)) problems.push("og:image musi być absolutny z publicOrigin");
-  const linkPrefix = route.noindex ? "/" : "";
+  if (!html.includes(`<meta property="og:image" content="${site.publicOrigin}${site.basePath}assets/og/og-image.png">`)) problems.push("og:image musi być absolutny z publicOrigin + basePath");
+  const linkPrefix = route.noindex ? site.basePath : "";
   if (!html.includes(`<link rel="icon" href="${linkPrefix}assets/branding/alarm-soia-mark.svg" type="image/svg+xml">`)) problems.push("brak favicon SVG");
   if (!html.includes('<a class="skip-link" href="#tresc">')) problems.push("brak skip-linku");
   if (!html.includes('<main id="tresc"')) problems.push("brak main#tresc");
@@ -240,7 +243,7 @@ export async function checkSite(repositoryRoot) {
   const facts = await readJson(root, "dane-przekazywane.json");
   if (site.schemaVersion !== 1) throw new Error("data/site.json: nieznany schemaVersion");
   if (!/^https:\/\/[a-z0-9.-]+$/u.test(site.publicOrigin)) throw new Error("data/site.json: publicOrigin musi być https i bez ukośnika końcowego");
-  if (site.basePath !== "/") throw new Error("data/site.json: basePath musi być \"/\" (płaskie pliki .html)");
+  if (typeof site.basePath !== "string" || !/^\/(?:[a-z0-9-]+\/)*$/u.test(site.basePath)) throw new Error("data/site.json: basePath musi zaczynać się i kończyć ukośnikiem (np. \"/\" albo \"/alarm-soia-public/\")");
   if (!Array.isArray(site.routes) || site.routes.length === 0) throw new Error("data/site.json: brak tras");
   const files = await collectFiles(root);
   const siteFiles = files.filter((path) => path.startsWith(`${SITE_DIRECTORY}/`)).map((path) => path.slice(SITE_DIRECTORY.length + 1));
@@ -280,13 +283,13 @@ export async function checkSite(repositoryRoot) {
     if (problems.length > 0) throw new Error(`${route.file}: ${problems.join("; ")}`);
     const stylesheetMatches = [...html.matchAll(/<link rel="stylesheet" href="([^"]+)">/gu)];
     if (stylesheetMatches.length !== 1) throw new Error(`Dokładnie jeden lokalny arkusz stylów: ${route.file}`);
-    stylesheetAssets.add(route.noindex ? stylesheetMatches[0][1].replace(/^\//u, "") : stylesheetMatches[0][1]);
+    stylesheetAssets.add(route.noindex && stylesheetMatches[0][1].startsWith(site.basePath) ? stylesheetMatches[0][1].slice(site.basePath.length) : stylesheetMatches[0][1]);
     for (const pattern of forbiddenPagePatterns) {
       if (pattern.test(html)) forbiddenMatches.push(`${route.file}:${pattern}`);
     }
     externalRuntimeUrls.push(...pageRuntimeUrls(html).map((url) => `${route.file}:${url}`));
     for (const value of [...attributeValues(html, "href"), ...attributeValues(html, "src")]) {
-      const target = internalTarget(siteRoot, routeByPath, route.file, value, Boolean(route.noindex));
+      const target = internalTarget(siteRoot, routeByPath, route.file, value, route.noindex ? site.basePath : null);
       if (!target) continue;
       try {
         const stats = await lstat(target);
@@ -308,7 +311,7 @@ export async function checkSite(repositoryRoot) {
 
   // robots.txt i sitemap.xml
   const robots = await readFile(join(siteRoot, "robots.txt"), "utf8").catch(() => { throw new Error("Brak site/robots.txt"); });
-  if (!/^Allow: \/$/mu.test(robots) || !robots.includes(`Sitemap: ${site.publicOrigin}/sitemap.xml`)) throw new Error("robots.txt: wymagane Allow: / i Sitemap z publicOrigin");
+  if (!/^Allow: \/$/mu.test(robots) || !robots.includes(`Sitemap: ${site.publicOrigin}${site.basePath}sitemap.xml`)) throw new Error("robots.txt: wymagane Allow: / i Sitemap z publicOrigin + basePath");
   const sitemap = await readFile(join(siteRoot, "sitemap.xml"), "utf8").catch(() => { throw new Error("Brak site/sitemap.xml"); });
   const sitemapRoutes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/gu)].map((match) => match[1]);
   const expectedSitemap = site.routes.filter((route) => !route.noindex).map((route) => canonicalFor(site, route));

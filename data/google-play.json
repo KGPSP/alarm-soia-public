@@ -19,10 +19,10 @@
     "pl-PL": "Wersja 1.0.3: pierwsze wydanie na Androida — oficjalne ostrzeżenia PL-CAP dla wybranych powiatów, powiadomienia w czterech kanałach, głośny alarm P1, historia 48 godzin i poradnik bezpieczeństwa.",
     "en-GB": "Version 1.0.3: first Android release — official PL-CAP warnings for the counties you choose, notifications in four channels, loud P1 alarm, 48-hour history and the safety guide."
   },
-  "privacyPolicyUrl": "https://alarm-soia.expo.app/polityka-prywatnosci",
+  "privacyPolicyUrl": "https://kgpsp.github.io/alarm-soia-public/polityka-prywatnosci",
   "developerName": "Komenda Główna Państwowej Straży Pożarnej",
   "contactEmail": "informacje@kg.straz.gov.pl",
-  "websiteUrl": "https://alarm-soia.expo.app",
+  "websiteUrl": "https://kgpsp.github.io/alarm-soia-public/",
   "category": "TOOLS",
   "tags": {
     "max": 5,

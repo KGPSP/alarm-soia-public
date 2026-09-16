@@ -82,11 +82,11 @@ test("STORE-LIMITS URL-e polityki, wsparcia i marketingu wskazują publicOrigin 
   const appStore = await data("app-store.json");
   const googlePlay = await data("google-play.json");
 
-  assert.equal(appStore.privacyPolicyUrl, `${site.publicOrigin}/polityka-prywatnosci`);
-  assert.equal(appStore.supportUrl, `${site.publicOrigin}/pomoc`);
-  assert.equal(appStore.marketingUrl, site.publicOrigin);
-  assert.equal(googlePlay.privacyPolicyUrl, `${site.publicOrigin}/polityka-prywatnosci`);
-  assert.equal(googlePlay.websiteUrl, site.publicOrigin);
+  assert.equal(appStore.privacyPolicyUrl, `${site.publicOrigin}${site.basePath}polityka-prywatnosci`);
+  assert.equal(appStore.supportUrl, `${site.publicOrigin}${site.basePath}pomoc`);
+  assert.equal(appStore.marketingUrl, `${site.publicOrigin}${site.basePath}`);
+  assert.equal(googlePlay.privacyPolicyUrl, `${site.publicOrigin}${site.basePath}polityka-prywatnosci`);
+  assert.equal(googlePlay.websiteUrl, `${site.publicOrigin}${site.basePath}`);
   for (const path of ["polityka-prywatnosci", "pomoc", ""]) {
     const route = site.routes.find((candidate) => candidate.path === path);
     assert.ok(route, `trasa ${path}`);
