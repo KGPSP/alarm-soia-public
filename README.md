@@ -110,9 +110,10 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
    konta organizacji; `data/google-play-declarations.json` → `developerProfile.phone`.
 5. **Pismo do deklaracji „Government apps” (Google Play)** — dokument KG PSP na papierze firmowym
    z danymi kontaktowymi do weryfikacji; konto organizacji w domenie `kg.straz.gov.pl`.
-6. **Nazwa podglądu EAS** — `alarm-soia`; jeśli zajęta, inna nazwa i podmiana `publicOrigin`
-   (`data/site.json` + regeneracja `canonical`/`og:url`/`sitemap.xml`/`robots.txt` oraz URL-i
-   w `data/app-store.json` i `data/google-play.json`) przed pierwszą publikacją.
+6. **Nazwa podglądu EAS** — zrobione 2026-09-16: `alarm-soia` zarezerwowana przy pierwszym
+   wdrożeniu (`eas deploy --prod --dev-domain alarm-soia`), produkcja żyje pod
+   `https://alarm-soia.expo.app`; `publicOrigin` i adresy w `data/` są z nią zgodne. Kolejne wdrożenia:
+   `eas deploy --export-dir site --prod` z katalogu tego repozytorium (deploy nie rusza sam z GitHuba).
 7. **Zrzuty tabletów Android (opcjonalne)** — aplikacja jest dostępna na tabletach Android
    (`supports-screens`); zrzuty 7"/10" nie są wymagane do publikacji, ale Play może je promować.
 8. **Odświeżenie zrzutów przed wydaniem publicznym** — obecne zrzuty pochodzą z buildu testowego
