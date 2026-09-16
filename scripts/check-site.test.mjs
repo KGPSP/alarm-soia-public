@@ -35,7 +35,13 @@ test("SITE-ROUTES publikuje 9 płaskich tras z data/site.json: lang=pl, linki wz
     const canonical = route.path === "" ? `${site.publicOrigin}/` : `${site.publicOrigin}/${route.path}`;
     assert.match(html, /<html lang="pl">/u, route.file);
     assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`), `${route.file}: canonical`);
-    assert.doesNotMatch(html, /href="\/[^"]*"/u, `${route.file}: link bezwzględny`);
+    if (route.noindex) {
+      // Strona błędu jest serwowana pod dowolną ścieżką — linki od korzenia, nie względne.
+      assert.match(html, /<link rel="stylesheet" href="\/assets\/css\/alarm-[a-f0-9]{8}\.css">/u, `${route.file}: arkusz od korzenia`);
+      assert.doesNotMatch(html, /(?:href|src)="(?!\/|#|mailto:|https?:)[^"]*"/u, `${route.file}: link względny na stronie błędu`);
+    } else {
+      assert.doesNotMatch(html, /href="\/[^"]*"/u, `${route.file}: link bezwzględny`);
+    }
     assert.doesNotMatch(html, /href="[^"]*\.html"/u, `${route.file}: link z rozszerzeniem .html`);
     assert.match(html, /<nav class="site-nav" aria-label="Główna nawigacja">/u, route.file);
     assert.match(html, /<nav class="footer-links" aria-label="Informacje uzupełniające">/u, route.file);

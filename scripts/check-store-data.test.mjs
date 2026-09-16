@@ -160,10 +160,13 @@ test("STORE-DECL Play: 27 kodów UE, governmentApp, ads=false, newsApp=false, ad
   }
   assert.equal(declarations.dataSafety.encryptedInTransit, true);
   assert.equal(declarations.dataSafety.deletionMechanism, true);
-  assert.match(declarations.dataSafety.deletionNote, /DELETE/u);
+  assert.match(declarations.dataSafety.deletionNote, /\bIOD\b/u);
+  assert.match(declarations.dataSafety.deletionNote, /brak kontrolki/u);
   assert.deepEqual(declarations.formFactors, ["PHONE"]);
   assert.deepEqual(declarations.publisher, site.publisher);
   await rejectsAfter((edit) => edit("google-play-declarations.json", (document) => { document.governmentApp = false; }), /governmentApp/u);
+  await rejectsAfter((edit) => edit("google-play-declarations.json", (document) => { document.dataSafety.deletionNote = "cofnięcie zgody w aplikacji"; }), /deletionNote wskazującą IOD/u);
+  await rejectsAfter((edit) => edit("google-play-declarations.json", (document) => { document.dataSafety.deletionNote = "wniosek do IOD"; }), /brak kontrolki/u);
   await rejectsAfter((edit) => edit("google-play-declarations.json", (document) => { document.targetAudience = ["13_15", "18_PLUS"]; }), /targetAudience/u);
 });
 

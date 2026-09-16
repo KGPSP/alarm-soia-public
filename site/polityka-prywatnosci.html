@@ -47,7 +47,7 @@
           <caption class="muted">Rejestracja powiadomień push — pola przesyłane na serwer</caption>
           <thead><tr><th scope="col">Dane</th><th scope="col">Cel</th><th scope="col">Przechowywanie</th></tr></thead>
           <tbody>
-            <tr><td>Token push (APNs lub FCM)</td><td>Identyfikator wydany przez Apple lub Google, pod którym platforma doręcza powiadomienia na ten telefon. Jedyny identyfikator, jaki serwer zna. Przy części żądań (aktualizacja, usunięcie, sprawdzenie stanu) token jest przekazywany w adresie żądania.</td><td>Do cofnięcia zgody na powiadomienia w aplikacji (rejestracja jest wtedy usuwana z serwera) albo do rozpatrzenia wniosku złożonego do IOD.</td></tr>
+            <tr><td>Token push (APNs lub FCM)</td><td>Identyfikator wydany przez Apple lub Google, pod którym platforma doręcza powiadomienia na ten telefon. Jedyny identyfikator, jaki serwer zna. Przy części żądań (aktualizacja, usunięcie, sprawdzenie stanu) token jest przekazywany w adresie żądania.</td><td>Do usunięcia rejestracji na wniosek złożony do IOD albo w ramach porządkowania nieaktywnych rejestracji przez administratora (okres do ustalenia, §8). Wyłączenie powiadomień lub odinstalowanie aplikacji unieważnia token po stronie Apple lub Google, ale samo nie usuwa wpisu z serwera.</td></tr>
             <tr><td>Platforma (ios / android)</td><td>Wybór właściwego kanału doręczeń (APNs albo FCM).</td><td>Jak rejestracja.</td></tr>
             <tr><td>Środowisko — environment (development / production)</td><td>Rozróżnienie buildów testowych od wydania sklepowego, aby powiadomienia testowe nie trafiały do użytkowników wydania publicznego.</td><td>Jak rejestracja.</td></tr>
             <tr><td>Wersja aplikacji (appVersion)</td><td>Dopasowanie formatu powiadomienia do możliwości zainstalowanej wersji.</td><td>Jak rejestracja.</td></tr>
@@ -89,6 +89,7 @@
         <li><strong>Apple Maps (tylko iPhone):</strong> podkład mapy na ekranie Mapa pochodzi z map Apple; zapytania o kafelki mapy przetwarza Apple według własnych zasad. Aplikacja nie przekazuje Apple położenia użytkownika, bo go nie zna.</li>
         <li><strong>Aktualizacje kodu aplikacji (Expo / EAS):</strong> przy uruchomieniu aplikacja sprawdza na serwerze dostawcy Expo, czy jest dostępna aktualizacja swojego kodu. Żądanie zawiera losowy identyfikator instalacji (niepowiązany ze sprzętem ani kontem) i wersję środowiska uruchomieniowego; dane te przetwarza Expo według własnych zasad.</li>
         <li><strong>Sklepy i system:</strong> pobranie aplikacji z App Store lub Google Play oraz działanie systemu iOS lub Android podlega zasadom Apple, Google i producenta telefonu, niezależnym od niniejszej polityki.</li>
+        <li><strong>Przekazywanie poza EOG (projekt):</strong> Apple, Google i Expo mają siedziby w Stanach Zjednoczonych, więc token push, identyfikator instalacji i zapytania o mapę mogą być przetwarzane poza Europejskim Obszarem Gospodarczym. Podstawę takiego przekazania (decyzja Komisji Europejskiej o adekwatności w ramach EU-US Data Privacy Framework albo standardowe klauzule umowne) oraz miejsce przetwarzania rejestracji przez serwer <span class="mono">alarm.soia.info</span> u dostawcy hostingu wskaże IOD w wersji ostatecznej niniejszej polityki.</li>
       </ul>
     </section>
 

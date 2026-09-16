@@ -15,8 +15,9 @@ To repozytorium nie zawiera kodu aplikacji mobilnej, konfiguracji EAS, kluczy, p
 urządzeń ani historii prywatnego repozytorium. Zawiera wyłącznie statyczny kod witryny, publiczne
 dokumenty i przygotowane materiały sklepowe.
 
-Aplikacja jest przeznaczona na iPhone oraz telefony z Androidem. Repozytorium nie zawiera zrzutów
-dla iPada ani tabletów z Androidem (patrz „Decyzje przed wysyłką”).
+Aplikacja jest przeznaczona na iPhone oraz telefony z Androidem; na tabletach z Androidem daje się
+zainstalować, ale materiały sklepowe dotyczą telefonów. Repozytorium nie zawiera zrzutów dla iPada
+ani tabletów z Androidem (patrz „Decyzje przed wysyłką”).
 
 ## Układ
 
@@ -32,7 +33,10 @@ dla iPada ani tabletów z Androidem (patrz „Decyzje przed wysyłką”).
 | `scripts/` | `check-site.mjs` (witryna), `check-store-data.mjs` (pakiet sklepowy) i ich testy `node --test` |
 
 Linki wewnętrzne w HTML są względne i bez rozszerzeń (`href="pomoc"`, `href="assets/…"`),
-a `canonical`, `og:url`, `sitemap.xml` i `robots.txt` są absolutne z `publicOrigin`.
+a `canonical`, `og:url`, `sitemap.xml` i `robots.txt` są absolutne z `publicOrigin`. Jedyny wyjątek
+to `404.html`: hosting serwuje ją pod dowolną, także zagnieżdżoną ścieżką (`/pomoc/x`), więc jej
+linki i arkusz stylów zaczynają się od korzenia (`href="/pomoc"`, `href="/assets/…"`) — skrypt
+kontrolny wymaga tego dla trasy z `noindex` i zabrania na pozostałych.
 
 ## Kontrola lokalna
 
@@ -73,7 +77,8 @@ wykonuje człowiek.
 
 ### Alternatywa: GitHub Pages
 
-Kod nie zależy od hostingu — wszystkie linki wewnętrzne są względne. Przeniesienie na GitHub Pages
+Kod nie zależy od hostingu — linki wewnętrzne są względne (poza `404.html`, której linki od korzenia
+trzeba by poprzedzić `basePath`). Przeniesienie na GitHub Pages
 (repozytorium publiczne `KGPSP/alarm-soia-public`, gałąź `main`, katalog `site/` przez
 `actions/deploy-pages` albo kopia zawartości `site/` do korzenia) wymaga tylko jednej podmiany
 origin: nowa wartość `publicOrigin` w `data/site.json` (np. `https://kgpsp.github.io`) i — jeśli
@@ -118,9 +123,9 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
 10. **Polityka prywatności = projekt** — data obowiązywania, podstawa prawna (art. 6 ust. 1 RODO),
     okres porządkowania nieaktywnych rejestracji i „Linked to You” dla tokenu push wymagają
     akceptacji IOD (`status: DRAFT_NOT_SUBMITTED` we wszystkich plikach `data/`).
-11. **Ikona 512** — obecny plik jest 24-bitowym PNG (bez kanału alfa); Play Console opisuje ikonę
-    jako 32-bitowy PNG z alfą. Jeśli konsola odrzuci plik, wyeksportować wariant z kanałem alfa
-    (skrypt kontrolny dopuszcza oba typy).
+11. **Ikona 512** — `icon-512.png` jest 32-bitowym PNG z kanałem alfa (typ koloru 6), tak jak opisuje
+    ją Play Console; skrypt kontrolny dopuszcza też wariant 24-bitowy, gdyby konsola zażądała pliku
+    bez przezroczystości.
 12. **Adres sklepów** — po publikacji wpisać `storeUrls` w `data/site.json` i dodać przyciski
     pobierania na stronie głównej.
 

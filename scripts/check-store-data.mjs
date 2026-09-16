@@ -241,8 +241,13 @@ export async function checkStoreData(repositoryRoot) {
   if (/konto/iu.test(absent)) {
     expect(declarations.requiresAccount === false && playDeclarations.requiresAccount === false, "brak konta → requiresAccount=false w obu sklepach");
   }
-  if (/DELETE/u.test(registration.retencja)) {
-    expect(dataSafety.deletionMechanism === true, "cofnięcie zgody usuwa rejestrację → deletionMechanism=true");
+  // Retencja opisuje usunięcie na wniosek do IOD; zdanie o braku kontrolki w aplikacji jest zaprzeczone,
+  // więc nie wolno wyprowadzać mechanizmu z samego słowa „DELETE”.
+  const deletionNote = dataSafety.deletionNote ?? "";
+  expect(/wniosek do IOD/iu.test(registration.retencja), "retencja rejestracji musi wskazywać usunięcie na wniosek do IOD");
+  expect(dataSafety.deletionMechanism === true && /\bIOD\b/u.test(deletionNote), "usunięcie na wniosek do IOD → deletionMechanism=true z deletionNote wskazującą IOD");
+  if (/nie ma kontrolki cofnięcia zgody/iu.test(registration.retencja)) {
+    expect(/brak kontrolki/iu.test(deletionNote), "brak kontrolki cofnięcia zgody w aplikacji → deletionNote musi to ujawniać");
   }
   expect(declarations.privacyEmail === facts.iod && playDeclarations.publisher.privacyEmail === facts.iod, "IOD z faktów = privacyEmail w deklaracjach");
   expect(declarations.supportEmail === facts.kontakt && googlePlay.contactEmail === facts.kontakt, "kontakt z faktów = supportEmail/contactEmail");

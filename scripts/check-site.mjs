@@ -8,7 +8,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const SITE_DIRECTORY = "site";
 const DATA_DIRECTORY = "data";
-const SKIPPED_DIRECTORIES = new Set([".git", "node_modules", ".public-import"]);
+const SKIPPED_DIRECTORIES = new Set([".git", "node_modules"]);
 const TEXT_EXTENSIONS = new Set([
   "", ".css", ".html", ".js", ".json", ".md", ".mjs", ".svg", ".txt", ".xml", ".yaml", ".yml",
 ]);
@@ -160,10 +160,18 @@ function attributeValues(fragment, attribute) {
   return values;
 }
 
-function internalTarget(siteRoot, routeByPath, currentFile, value) {
-  const clean = value.split("#")[0].split("?")[0];
+// rootAbsolute: strona 404 jest serwowana pod dowolną (także zagnieżdżoną) ścieżką, więc jej linki
+// muszą zaczynać się od korzenia (basePath "/"); pozostałe strony używają linków względnych.
+function internalTarget(siteRoot, routeByPath, currentFile, value, rootAbsolute = false) {
+  let clean = value.split("#")[0].split("?")[0];
   if (clean === "" || /^(?:mailto:|tel:|https?:\/\/)/iu.test(clean)) return null;
-  if (clean.startsWith("/")) throw new Error(`Link bezwzględny zamiast względnego: ${value} w ${currentFile}`);
+  if (clean.startsWith("/")) {
+    if (!rootAbsolute) throw new Error(`Link bezwzględny zamiast względnego: ${value} w ${currentFile}`);
+    clean = clean.slice(1);
+    if (clean === "") return resolve(siteRoot, "index.html");
+  } else if (rootAbsolute) {
+    throw new Error(`Link względny na stronie błędu serwowanej pod dowolną ścieżką: ${value} w ${currentFile}`);
+  }
   if (clean === "." || clean === "./") return resolve(siteRoot, "index.html");
   if (/\.html$/iu.test(clean)) throw new Error(`Link z rozszerzeniem .html: ${value} w ${currentFile}`);
   const routeFile = routeByPath.get(clean);
@@ -187,7 +195,8 @@ function checkPageStructure(site, route, html, file) {
   if (!/<meta property="og:title" content="[^"]+">/u.test(html)) problems.push("brak og:title");
   if (!/<meta property="og:description" content="[^"]+">/u.test(html)) problems.push("brak og:description");
   if (!html.includes(`<meta property="og:image" content="${site.publicOrigin}/assets/og/og-image.png">`)) problems.push("og:image musi być absolutny z publicOrigin");
-  if (!html.includes('<link rel="icon" href="assets/branding/alarm-soia-mark.svg" type="image/svg+xml">')) problems.push("brak favicon SVG");
+  const linkPrefix = route.noindex ? "/" : "";
+  if (!html.includes(`<link rel="icon" href="${linkPrefix}assets/branding/alarm-soia-mark.svg" type="image/svg+xml">`)) problems.push("brak favicon SVG");
   if (!html.includes('<a class="skip-link" href="#tresc">')) problems.push("brak skip-linku");
   if (!html.includes('<main id="tresc"')) problems.push("brak main#tresc");
   if (!/<nav class="site-nav" aria-label="[^"]+">/u.test(html)) problems.push("brak nawigacji głównej");
@@ -204,7 +213,7 @@ function checkPageStructure(site, route, html, file) {
   }
   for (const other of site.routes) {
     if (other.noindex) continue;
-    const href = other.path === "" ? "./" : other.path;
+    const href = other.path === "" ? linkPrefix || "./" : `${linkPrefix}${other.path}`;
     if (!new RegExp(`<a href="${escapeRegExp(href)}"(?: aria-current="page")?>`, "u").test(html)) {
       problems.push(`brak linku nawigacyjnego do ${href}`);
     }
@@ -271,13 +280,13 @@ export async function checkSite(repositoryRoot) {
     if (problems.length > 0) throw new Error(`${route.file}: ${problems.join("; ")}`);
     const stylesheetMatches = [...html.matchAll(/<link rel="stylesheet" href="([^"]+)">/gu)];
     if (stylesheetMatches.length !== 1) throw new Error(`Dokładnie jeden lokalny arkusz stylów: ${route.file}`);
-    stylesheetAssets.add(stylesheetMatches[0][1]);
+    stylesheetAssets.add(route.noindex ? stylesheetMatches[0][1].replace(/^\//u, "") : stylesheetMatches[0][1]);
     for (const pattern of forbiddenPagePatterns) {
       if (pattern.test(html)) forbiddenMatches.push(`${route.file}:${pattern}`);
     }
     externalRuntimeUrls.push(...pageRuntimeUrls(html).map((url) => `${route.file}:${url}`));
     for (const value of [...attributeValues(html, "href"), ...attributeValues(html, "src")]) {
-      const target = internalTarget(siteRoot, routeByPath, route.file, value);
+      const target = internalTarget(siteRoot, routeByPath, route.file, value, Boolean(route.noindex));
       if (!target) continue;
       try {
         const stats = await lstat(target);
