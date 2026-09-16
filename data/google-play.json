@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "status": "DRAFT_NOT_SUBMITTED",
+  "defaultLocale": "pl-PL",
+  "locales": ["pl-PL", "en-GB"],
+  "appName": {
+    "pl-PL": "ALARM.SOIA",
+    "en-GB": "ALARM.SOIA"
+  },
+  "shortDescription": {
+    "pl-PL": "Oficjalne alarmy i ostrzeżenia dla Twojego powiatu. Bez konta, bez reklam.",
+    "en-GB": "Official alerts and warnings for your county in Poland. No account, no ads."
+  },
+  "fullDescription": {
+    "pl-PL": "ALARM.SOIA to oficjalna, bezpłatna aplikacja Komendy Głównej Państwowej Straży Pożarnej. Odbiera ostrzeżenia publikowane przez uprawnione służby w standardzie PL-CAP i udostępniane przez serwer alarm.soia.info — dla powiatów, miast i województw, które sam wskażesz. Bez konta, bez reklam, bez czytania położenia telefonu.\n\nŹRÓDŁO INFORMACJI\nOstrzeżenia pochodzą z Systemu Ostrzegania i Alarmowania prowadzonego przez Komendę Główną Państwowej Straży Pożarnej (alarm.soia.info). Publikują je wyłącznie uprawnione służby; nadawcę widzisz na dole każdego komunikatu. Aplikacja jest odbiornikiem i nie tworzy własnych treści.\n\nJAK TO DZIAŁA\nWybierasz do 10 obszarów (kod TERYT: powiat, miasto albo województwo). Gdy służby opublikują ostrzeżenie dla Twojego obszaru, telefon dostaje powiadomienie z pełną treścią komunikatu, instrukcją i czasem obowiązywania.\n\nCZTERY POZIOMY, CZTERY KANAŁY POWIADOMIEŃ\n• Alarm · P1 — zagrożenie życia; kanał alarmowy gra na pełną głośność także przy wyciszonym telefonie, z wibracją i miganiem latarki, aż go zatrzymasz.\n• Pilne ostrzeżenie · P2 — poważne zagrożenie, np. powódź albo pożar.\n• Ostrzeżenie · P3 — burze, upały, silny wiatr, awarie.\n• Informacja · P4 — komunikaty porządkowe i testy.\nO poziomach P2–P4 powiadamiasz się według własnych potrzeb; alarmu P1 nie da się wyłączyć.\n\nCO JESZCZE\n• Lista Twoich obszarów z poziomem i liczbą aktywnych ostrzeżeń (w tej wersji na Androidzie zamiast mapy).\n• Historia z ostatnich 48 godzin, także bez sieci.\n• Dwa sygnały syren do odsłuchania — ogłoszenie i odwołanie alarmu.\n• „Poradnik bezpieczeństwa” MSWiA, MON i RCB (2025) dostępny bez sieci.\n• Ekran Gotowości: czy powiadomienia są włączone, czy alarm przebije wyciszenie i czy serwer potwierdził ten telefon.\n• Ćwiczenia i testy zawsze oznaczone słowem ĆWICZENIE.\n\nPRYWATNOŚĆ\nNa serwer KG PSP trafia wyłącznie rejestracja powiadomień: token push wydany przez Google (FCM), lista wybranych obszarów i poziomów oraz platforma i wersja aplikacji. Brak analityki, reklam, identyfikatora reklamowego i lokalizacji. Rejestrację można usunąć na wniosek do Inspektora Ochrony Danych. Szczegóły: polityka prywatności.\n\nAplikacja jest dodatkowym kanałem ostrzegania. W sytuacji zagrożenia stosuj się do komunikatów służb i poleceń właściwych organów.\n\nWydawca: Komenda Główna Państwowej Straży Pożarnej. Kontakt: informacje@kg.straz.gov.pl",
+    "en-GB": "ALARM.SOIA is the official, free app of the National Headquarters of the State Fire Service of Poland (Komenda Główna Państwowej Straży Pożarnej). It receives warnings published by authorised services in the PL-CAP standard and distributed by the alarm.soia.info server — for the counties, cities and voivodeships you choose. No account, no ads, no reading of your phone's location.\n\nSOURCE OF INFORMATION\nWarnings come from the Warning and Alerting System run by the National Headquarters of the State Fire Service (alarm.soia.info). They are published only by authorised services; the sender is shown at the bottom of every message. The app is a receiver and creates no content of its own.\n\nHOW IT WORKS\nChoose up to 10 areas (a county, city or voivodeship identified by its TERYT code). When the services publish a warning for your area, your phone receives a notification with the full message, instructions and validity period.\n\nFOUR LEVELS, FOUR NOTIFICATION CHANNELS\n• Alarm · P1 — threat to life; the alarm channel plays at full volume even when the phone is muted, with vibration and a flashing torch, until you stop it.\n• Urgent warning · P2 — serious threat, e.g. flood or fire.\n• Warning · P3 — storms, heat, strong wind, outages.\n• Information · P4 — routine messages and tests.\nYou choose which of P2–P4 notify you; the P1 alarm cannot be switched off.\n\nMORE\n• List of your areas with the level and number of active warnings (in this Android version instead of a map).\n• History of the last 48 hours, also offline.\n• Two siren signals to listen to — alarm announcement and all-clear.\n• The Polish “Safety Guide” (MSWiA, MON, RCB, 2025) available offline.\n• Readiness screen: are notifications on, will the alarm override silent mode, has the server confirmed this phone.\n• Exercises and tests are always labelled ĆWICZENIE (exercise).\n\nPRIVACY\nThe only data sent to the KG PSP server is the notification registration: the push token issued by Google (FCM), your chosen areas and levels, the platform and app version. No analytics, no ads, no advertising ID, no location. You can ask the Data Protection Officer to delete the registration. Details: privacy policy.\n\nThe app is an additional warning channel. In an emergency follow the instructions of the emergency services and competent authorities.\n\nPublisher: Komenda Główna Państwowej Straży Pożarnej. Contact: informacje@kg.straz.gov.pl"
+  },
+  "releaseNotes": {
+    "pl-PL": "Wersja 1.0.3: pierwsze wydanie na Androida — oficjalne ostrzeżenia PL-CAP dla wybranych powiatów, powiadomienia w czterech kanałach, głośny alarm P1, historia 48 godzin i poradnik bezpieczeństwa.",
+    "en-GB": "Version 1.0.3: first Android release — official PL-CAP warnings for the counties you choose, notifications in four channels, loud P1 alarm, 48-hour history and the safety guide."
+  },
+  "privacyPolicyUrl": "https://alarm-soia.expo.app/polityka-prywatnosci",
+  "developerName": "Komenda Główna Państwowej Straży Pożarnej",
+  "contactEmail": "informacje@kg.straz.gov.pl",
+  "websiteUrl": "https://alarm-soia.expo.app",
+  "category": "TOOLS",
+  "tags": {
+    "max": 5,
+    "note": "Nazwy tagów nie są opublikowane w pomocy Play — dobór z listy w konsoli (np. bezpieczeństwo, powiadomienia, pogoda)."
+  },
+  "targetAudience": "18_PLUS",
+  "notes": "Projekt publicznego kontraktu metadanych. Publikacja pozostaje osobno zatwierdzanym działaniem KG PSP w Play Console."
+}

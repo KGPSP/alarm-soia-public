@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "status": "DRAFT_NOT_SUBMITTED",
+  "governmentApp": true,
+  "governmentAppProof": "DO_DECYZJI — pismo KG PSP na papierze firmowym z danymi kontaktowymi do weryfikacji przez Google (konto organizacji w domenie kg.straz.gov.pl)",
+  "ads": false,
+  "requiresAccount": false,
+  "appAccess": "ALL_FUNCTIONALITY_AVAILABLE_WITHOUT_RESTRICTIONS",
+  "dataCollected": true,
+  "dataShared": false,
+  "newsApp": false,
+  "covid19App": false,
+  "financialFeatures": false,
+  "healthFeatures": false,
+  "advertisingId": false,
+  "inAppPurchases": false,
+  "targetAudience": ["18_PLUS"],
+  "restrictMinorAccess": false,
+  "category": "TOOLS",
+  "contentRating": {
+    "expected": "PEGI 3 / USK 0 / IARC 3+",
+    "questionnaire": {
+      "appCategory": "Utility, productivity, communication or other (not a game)",
+      "violence": false,
+      "sexualContent": false,
+      "profanity": false,
+      "controlledSubstances": false,
+      "gambling": false,
+      "fearOrHorrorThemes": false,
+      "userInteraction": false,
+      "sharesUserLocation": false,
+      "digitalPurchases": false,
+      "unrestrictedInternet": "DO_POTWIERDZENIA w konsoli — linki otwierają się w przeglądarce systemowej",
+      "note": "Ostrzeżenia o zagrożeniach to informacja faktograficzna służb, nie treść przerażająca."
+    }
+  },
+  "dataSafety": {
+    "collected": [
+      {
+        "type": "Device or other IDs",
+        "required": true,
+        "shared": false,
+        "ephemeral": false,
+        "purposes": ["App functionality"],
+        "note": "token push FCM (oraz identyfikator instalacji Firebase i losowy identyfikator instalacji EAS jako dostawcy usług)"
+      },
+      {
+        "type": "App activity/Other actions",
+        "required": true,
+        "shared": false,
+        "ephemeral": false,
+        "purposes": ["App functionality"],
+        "note": "kody TERYT obserwowanych obszarów i priorytety powiadomień przesyłane z rejestracją"
+      }
+    ],
+    "notCollected": ["Location", "App info and performance (crash logs, diagnostics)", "Personal info", "Messages", "Photos and videos", "Audio files", "Files and docs", "Contacts", "Calendar", "Health and fitness", "Financial info", "Web browsing"],
+    "encryptedInTransit": true,
+    "deletionMechanism": true,
+    "deletionNote": "wniosek do IOD (iod@kg.straz.gov.pl); w wersji 1.0.3 brak kontrolki cofnięcia zgody wysyłającej DELETE z aplikacji — decyzja produktowa (README, poz. 13)",
+    "independentSecurityReview": false
+  },
+  "permissionsInManifest": ["POST_NOTIFICATIONS", "CAMERA (latarka)", "VIBRATE", "RECEIVE_BOOT_COMPLETED", "WAKE_LOCK", "INTERNET", "ACCESS_NETWORK_STATE", "com.google.android.c2dm.permission.RECEIVE (FCM)"],
+  "sensitivePermissionDeclarations": "NIE DOTYCZY — brak AD_ID, USE_FULL_SCREEN_INTENT, SCHEDULE_EXACT_ALARM, FOREGROUND_SERVICE, lokalizacji; potwierdzić na artefakcie produkcyjnym przed submitem",
+  "countries": [
+    "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE",
+    "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"
+  ],
+  "formFactors": ["PHONE"],
+  "tabletScreenshots": "OPCJONALNE — aplikacja jest dostępna na tabletach Android (supports-screens); zrzuty 7\"/10\" poza zakresem tego wydania, decyzja KG PSP",
+  "developerProfile": {
+    "legalName": "Komenda Główna Państwowej Straży Pożarnej",
+    "address": "ul. Podchorążych 38, 00-463 Warszawa",
+    "email": "informacje@kg.straz.gov.pl",
+    "phone": "DO_DECYZJI — publiczny numer telefonu KG PSP (pole wymagane i publiczne dla konta organizacji)"
+  },
+  "publisher": {
+    "name": "Komenda Główna Państwowej Straży Pożarnej",
+    "address": "ul. Podchorążych 38, 00-463 Warszawa",
+    "supportEmail": "informacje@kg.straz.gov.pl",
+    "privacyEmail": "iod@kg.straz.gov.pl"
+  }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Publiczne podsumowanie deklaracji App Privacy (Apple) i Bezpieczeństwa danych (Google Play) dla aplikacji ALARM.SOIA.">
+  <meta name="theme-color" content="#B42318">
+  <title>Dane i prywatność — ALARM.SOIA</title>
+  <link rel="canonical" href="https://alarm-soia.expo.app/dane-i-prywatnosc">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALARM.SOIA">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Dane i prywatność — ALARM.SOIA">
+  <meta property="og:description" content="Co aplikacja ALARM.SOIA wysyła na serwer KG PSP i jak to opisują deklaracje sklepowe Apple i Google.">
+  <meta property="og:url" content="https://alarm-soia.expo.app/dane-i-prywatnosc">
+  <meta property="og:image" content="https://alarm-soia.expo.app/assets/og/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ALARM.SOIA — oficjalne ostrzeżenia dla Twojego powiatu">
+  <link rel="icon" href="assets/branding/alarm-soia-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/alarm-2bf4e9c4.css">
+</head>
+<body>
+  <a class="skip-link" href="#tresc">Przejdź do treści</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="./"><img src="assets/branding/alarm-soia-mark.svg" alt="" width="30" height="30"><span class="brand-name">ALARM.SOIA</span></a><nav class="site-nav" aria-label="Główna nawigacja"><a href="./">Aplikacja</a><a href="polityka-prywatnosci">Prywatność</a><a href="pomoc">Pomoc</a><a href="bezpieczenstwo">Bezpieczeństwo</a><a href="wydania">Wydania</a></nav></div></header>
+  <main id="tresc" class="content content--narrow">
+    <header class="page-head"><h1>Dane i prywatność</h1><p class="lead">Publiczne objaśnienie deklaracji App Privacy (App Store) i Bezpieczeństwa danych (Google Play) dla wersji 1.0.x.</p></header>
+    <div class="notice"><strong>Deklarowany stan:</strong> aplikacja zbiera identyfikator urządzenia (token push) oraz preferencje ostrzegania (kody TERYT i priorytety) wyłącznie na potrzeby doręczania powiadomień, nie udostępnia ich podmiotom trzecim do ich własnych celów i nie używa ich do śledzenia.</div>
+
+    <section class="document-section" aria-labelledby="tabela"><h2 id="tabela">Co trafia na serwer KG PSP i jak to deklarujemy</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption class="muted">Dane wysyłane przez aplikację i ich odpowiedniki w formularzach sklepów</caption>
+          <thead><tr><th scope="col">Dane</th><th scope="col">Dokąd i po co</th><th scope="col">App Privacy (Apple)</th><th scope="col">Bezpieczeństwo danych (Google Play)</th></tr></thead>
+          <tbody>
+            <tr><td>Token push (APNs lub FCM)</td><td>Serwer KG PSP <span class="mono">alarm.soia.info</span> — doręczanie powiadomień o ostrzeżeniach dla wybranych obszarów.</td><td>Identifiers → Device ID; cel: App Functionality; powiązane z użytkownikiem przez urządzenie; nieużywane do śledzenia.</td><td>Device or other IDs; wymagane; niewspółdzielone; cel: App functionality.</td></tr>
+            <tr><td>Kody TERYT obszarów i priorytety</td><td>Serwer KG PSP — filtr powiadomień: tylko wybrane obszary i poziomy.</td><td>Other Data → Other Data Types; cel: App Functionality; nieużywane do śledzenia.</td><td>App activity → Other actions; wymagane; niewspółdzielone; cel: App functionality.</td></tr>
+            <tr><td>Platforma, environment, wersja aplikacji</td><td>Serwer KG PSP — dobór kanału doręczeń i formatu powiadomienia.</td><td>Ten sam rekord Other Data Types.</td><td>Bez osobnej kategorii w formularzu (dane techniczne rejestracji).</td></tr>
+            <tr><td>Losowy identyfikator instalacji (Expo)</td><td>Dostawca Expo — sprawdzanie aktualizacji kodu aplikacji; identyfikator niepowiązany ze sprzętem ani kontem.</td><td>Objęty kategorią identyfikatorów urządzenia.</td><td>Objęty kategorią Device or other IDs.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Apple i Google (usługi APNs i FCM) oraz Expo działają jako dostawcy usług na potrzeby doręczeń i aktualizacji; nie otrzymują danych do własnych celów marketingowych. Na iPhonie podkład mapy pochodzi z map Apple.</p>
+    </section>
+
+    <section class="document-section" aria-labelledby="brak"><h2 id="brak">Czego nie zbieramy</h2>
+      <dl class="key-value">
+        <dt>Lokalizacja</dt><dd>Aplikacja nie czyta położenia telefonu; obszary wybiera użytkownik ręcznie.</dd>
+        <dt>Analityka i reklamy</dt><dd>Brak analityki, reklam i identyfikatora reklamowego.</dd>
+        <dt>Raporty awarii</dt><dd>Moduł raportowania awarii obecny w pakiecie nie jest uruchamiany — dzienniki awarii nie są zbierane.</dd>
+        <dt>Konto</dt><dd>Brak konta, logowania, haseł, adresu e-mail i numeru telefonu.</dd>
+        <dt>Kamera</dt><dd>Uprawnienie służy wyłącznie latarce podczas alarmu P1; obraz nie jest zapisywany ani wysyłany.</dd>
+      </dl>
+    </section>
+
+    <section class="document-section" aria-labelledby="praktyki"><h2 id="praktyki">Praktyki bezpieczeństwa</h2>
+      <ul>
+        <li><strong>Szyfrowanie w tranzycie:</strong> całość komunikacji z serwerem KG PSP odbywa się przez HTTPS.</li>
+        <li><strong>Usunięcie danych:</strong> na wniosek do Inspektora Ochrony Danych (w tej wersji aplikacja nie wysyła żądania usunięcia z Ustawień); wyłączenie powiadomień lub odinstalowanie aplikacji unieważnia token push i zatrzymuje doręczanie. Kontakt: <a href="mailto:iod@kg.straz.gov.pl">iod@kg.straz.gov.pl</a>.</li>
+        <li><strong>Brak udostępniania:</strong> dane nie są sprzedawane ani przekazywane podmiotom trzecim do ich własnych celów.</li>
+      </ul>
+    </section>
+
+    <section class="document-section" aria-labelledby="granica"><h2 id="granica">Granica deklaracji</h2>
+      <p>To podsumowanie opisuje działanie aplikacji. Nie zastępuje formularzy zapisanych w Play Console i App Store Connect. Przed każdą publikacją deklaracje są ponownie porównywane z finalnym pakietem aplikacji, bibliotekami i zachowaniem systemowym; włączenie nowej funkcji zbierającej dane (na przykład raportowania awarii) wymaga ponownej oceny.</p>
+    </section>
+
+    <section class="document-section" aria-labelledby="pelna"><h2 id="pelna">Pełna polityka</h2>
+      <p>Szczegółowe informacje o administratorze, przechowywaniu, usuwaniu i prawach znajdują się w <a href="polityka-prywatnosci">polityce prywatności</a>.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div>© 2026 Komenda Główna Państwowej Straży Pożarnej</div><nav class="footer-links" aria-label="Informacje uzupełniające"><a href="dane-i-prywatnosc" aria-current="page">Dane i prywatność</a><a href="dostepnosc">Dostępność</a><a href="informacje-prawne">Informacje prawne</a></nav></div></footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bezpieczeństwo aplikacji ALARM.SOIA: szyfrowane połączenie z alarm.soia.info, oficjalne źródło ostrzeżeń, brak konta i zasady zgłaszania podatności.">
+  <meta name="theme-color" content="#B42318">
+  <title>Bezpieczeństwo — ALARM.SOIA</title>
+  <link rel="canonical" href="https://alarm-soia.expo.app/bezpieczenstwo">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALARM.SOIA">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Bezpieczeństwo — ALARM.SOIA">
+  <meta property="og:description" content="Jak aplikacja ALARM.SOIA chroni użytkowników i jak zgłosić problem bezpieczeństwa.">
+  <meta property="og:url" content="https://alarm-soia.expo.app/bezpieczenstwo">
+  <meta property="og:image" content="https://alarm-soia.expo.app/assets/og/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ALARM.SOIA — oficjalne ostrzeżenia dla Twojego powiatu">
+  <link rel="icon" href="assets/branding/alarm-soia-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/alarm-2bf4e9c4.css">
+</head>
+<body>
+  <a class="skip-link" href="#tresc">Przejdź do treści</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="./"><img src="assets/branding/alarm-soia-mark.svg" alt="" width="30" height="30"><span class="brand-name">ALARM.SOIA</span></a><nav class="site-nav" aria-label="Główna nawigacja"><a href="./">Aplikacja</a><a href="polityka-prywatnosci">Prywatność</a><a href="pomoc">Pomoc</a><a href="bezpieczenstwo" aria-current="page">Bezpieczeństwo</a><a href="wydania">Wydania</a></nav></div></header>
+  <main id="tresc" class="content content--narrow">
+    <header class="page-head"><h1>Bezpieczeństwo</h1><p class="lead">Jak aplikacja chroni użytkowników i jak zgłosić problem. Nie publikuj informacji poufnych w publicznym repozytorium.</p></header>
+
+    <section class="document-section" aria-labelledby="ochrona"><h2 id="ochrona">Jak aplikacja chroni użytkowników</h2>
+      <ul>
+        <li><strong>Szyfrowane połączenie.</strong> Aplikacja łączy się wyłącznie przez HTTPS z serwerem Komendy Głównej Państwowej Straży Pożarnej pod adresem <span class="mono">alarm.soia.info</span>. Każda odpowiedź serwera jest sprawdzana pod kątem zgodności ze schematem, zanim trafi do aplikacji.</li>
+        <li><strong>Oficjalne źródło.</strong> Ostrzeżenia publikują wyłącznie uprawnione służby; aplikacja jest odbiornikiem i nie potrafi tworzyć ani publikować komunikatów. Nadawca jest widoczny na dole każdego alarmu.</li>
+        <li><strong>Brak konta i haseł.</strong> Nie ma czego wykraść: aplikacja nie prosi o dane logowania, a serwer zna tylko token powiadomień i listę obszarów.</li>
+        <li><strong>Bez śledzenia.</strong> Brak analityki, reklam, identyfikatora reklamowego i lokalizacji.</li>
+        <li><strong>Sprawdzane linki.</strong> Powiadomienie może otworzyć w aplikacji tylko konkretne ostrzeżenie o poprawnym identyfikatorze; inne adresy są odrzucane.</li>
+      </ul>
+    </section>
+
+    <section class="document-section" aria-labelledby="zglaszanie"><h2 id="zglaszanie">Jak zgłosić problem</h2>
+      <p>Wyślij opis na <a href="mailto:informacje@kg.straz.gov.pl">informacje@kg.straz.gov.pl</a> z tematem „ALARM.SOIA — bezpieczeństwo”.</p>
+      <p>Podaj wersję aplikacji i systemu, model telefonu, zwięzłe kroki odtworzenia oraz oczekiwane i faktyczne zachowanie. Zanonimizuj zrzuty ekranu i usuń z nich powiadomienia oraz identyfikatory urządzenia.</p>
+      <div class="notice"><strong>Nie umieszczaj publicznie:</strong> danych osobowych, tokenów powiadomień, szczegółów podatności przed ich usunięciem ani informacji operacyjnych służb.</div>
+    </section>
+
+    <section class="document-section" aria-labelledby="testowanie"><h2 id="testowanie">Bezpieczne testowanie</h2>
+      <ul>
+        <li>Testuj wyłącznie na własnych urządzeniach i własnych rejestracjach.</li>
+        <li>Nie próbuj publikować ostrzeżeń, podszywać się pod służby ani zakłócać działania serwera <span class="mono">alarm.soia.info</span> — to element systemu ostrzegania ludności.</li>
+        <li>Nie próbuj uzyskiwać dostępu do danych innych użytkowników lub systemów KG PSP.</li>
+        <li>Przerwij test, jeśli mógłby spowodować ujawnienie danych albo utratę dostępności usługi.</li>
+      </ul>
+    </section>
+
+    <section class="document-section" aria-labelledby="zakres"><h2 id="zakres">Zakres publicznego repozytorium</h2>
+      <p>Publiczne repozytorium tej witryny zawiera tylko kod statycznej strony, treści informacyjne i zatwierdzone materiały sklepowe. Zwykłe błędy treści lub dostępności strony można opisać bez danych poufnych; podatności i informacje operacyjne należy zgłaszać e-mailem.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div>© 2026 Komenda Główna Państwowej Straży Pożarnej</div><nav class="footer-links" aria-label="Informacje uzupełniające"><a href="dane-i-prywatnosc">Dane i prywatność</a><a href="dostepnosc">Dostępność</a><a href="informacje-prawne">Informacje prawne</a></nav></div></footer>
+</body>
+</html>

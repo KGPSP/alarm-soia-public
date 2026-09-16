@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wydania aplikacji ALARM.SOIA: statusy kanałów testowych i sklepowych oraz najważniejsze zmiany w wersjach 1.0.3 i 1.0.2.">
+  <meta name="theme-color" content="#B42318">
+  <title>Wydania — ALARM.SOIA</title>
+  <link rel="canonical" href="https://alarm-soia.expo.app/wydania">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALARM.SOIA">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Wydania — ALARM.SOIA">
+  <meta property="og:description" content="Statusy kanałów wydania i historia wersji aplikacji ALARM.SOIA.">
+  <meta property="og:url" content="https://alarm-soia.expo.app/wydania">
+  <meta property="og:image" content="https://alarm-soia.expo.app/assets/og/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ALARM.SOIA — oficjalne ostrzeżenia dla Twojego powiatu">
+  <link rel="icon" href="assets/branding/alarm-soia-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/alarm-2bf4e9c4.css">
+</head>
+<body>
+  <a class="skip-link" href="#tresc">Przejdź do treści</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="./"><img src="assets/branding/alarm-soia-mark.svg" alt="" width="30" height="30"><span class="brand-name">ALARM.SOIA</span></a><nav class="site-nav" aria-label="Główna nawigacja"><a href="./">Aplikacja</a><a href="polityka-prywatnosci">Prywatność</a><a href="pomoc">Pomoc</a><a href="bezpieczenstwo">Bezpieczeństwo</a><a href="wydania" aria-current="page">Wydania</a></nav></div></header>
+  <main id="tresc" class="content">
+    <header class="page-head"><h1>Wydania</h1><p class="lead">Kanały testowe i publikacja sklepowa mają oddzielne statusy. Poniższy zapis nie zastępuje bieżącego stanu w konsoli danego sklepu.</p></header>
+
+    <section class="status-grid" aria-label="Status kanałów na 16 września 2026">
+      <article class="status-card status-card--observed"><span class="status-label">Wydanie testowe</span><h2>TestFlight (iPhone)</h2><p>Buildy wersji 1.0.x są udostępniane testerom w TestFlight. Build testowy ma pasek APLIKACJA TESTOWA i może otrzymywać ostrzeżenia ćwiczebne.</p></article>
+      <article class="status-card status-card--observed"><span class="status-label">Wydanie testowe</span><h2>Google Play — test wewnętrzny</h2><p>Wersja 1.0.3 została przesłana na ścieżkę wewnętrzną Google Play. Promocja do produkcji jest osobną decyzją w Play Console.</p></article>
+      <article class="status-card status-card--pending"><span class="status-label">W przygotowaniu</span><h2>App Store i Google Play</h2><p>Wpisy sklepowe, polityka prywatności i deklaracje są przygotowywane. Publikacja wymaga osobnej zgody Komendy Głównej PSP i przeglądu w każdym sklepie.</p></article>
+    </section>
+
+    <section class="section" aria-labelledby="v103"><div class="section-heading"><h2 id="v103">Wersja 1.0.3 — 8 września 2026</h2><p>Wydanie „Android w sklepie”: pierwsza wysyłka na ścieżkę wewnętrzną Google Play tą samą drogą co iOS. Bez zmian w działaniu aplikacji.</p></div>
+      <ul>
+        <li>wydanie na Androida w potoku wydawniczym: pakiet aplikacji, bramki sklepowe Google Play (docelowy Android 16, wyrównanie bibliotek natywnych do stron 16 KB) i wysyłka na ścieżkę wewnętrzną;</li>
+        <li>wpis ALARM.SOIA w Google Play Console z formularzem Bezpieczeństwa danych w wersji roboczej;</li>
+        <li>aktualizacje poprawek środowiska Expo SDK 57.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="v102"><div class="section-heading"><h2 id="v102">Wersja 1.0.2 — 4 września 2026</h2><p>Wydanie „aplikacja mówi językiem mieszkańca” — siedem sprintów po przeglądzie doświadczeń użytkownika.</p></div>
+      <ul>
+        <li>pierwsze uruchomienie w trzech krokach: po co jest aplikacja, wskazanie obszaru, dopiero potem zgoda na powiadomienia;</li>
+        <li>ikona rodzaju zagrożenia na karcie ostrzeżenia i na pełnym ekranie alarmu — 17 rodzajów zdarzeń;</li>
+        <li>cztery kanały powiadomień na Androidzie, po jednym na poziom — informacja P4 nie wchodzi już kanałem alarmowym;</li>
+        <li>sekcja „O czym powiadamiać na telefonie” — domyślnie P1 i P2, P3 i P4 po świadomej zgodzie; alarmu P1 nie da się wyłączyć;</li>
+        <li>warstwa prosta w „Jak czytać alerty”: cztery kafelki z nazwą poziomu, kształtem i zdaniem „Dla Ciebie”;</li>
+        <li>nazwy jednostek zamiast pojęcia technicznego: zakładka Powiaty, ekran „Twoje powiaty i województwa”, akcja „Dodaj powiat lub województwo”;</li>
+        <li>wspólny słownik poziomów P1–P4 na wszystkich ekranach — poziom zawsze niesie znak kształtu, nigdy sam kolor;</li>
+        <li>poprawki: wysyłka rejestracji powiadomień po zakończeniu sekwencji zgody, własny węzeł dostępności poradnika na Androidzie, godzina ostatniej aktualizacji nie cofa się po błędzie sieci.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="wczesniejsze"><div class="section-heading"><h2 id="wczesniejsze">Wersje 1.0.0 i 1.0.1</h2><p>Wydania wewnętrzne poprzedzające dziennik zmian.</p></div>
+      <p>Wersje 1.0.0 i 1.0.1 były pierwszymi buildami testowymi (iPhone, TestFlight) i poprzedzają wprowadzenie publicznego dziennika zmian. Ich zakres obejmował rdzeń aplikacji: wybór obszarów kodem TERYT, pobieranie ostrzeżeń PL-CAP, powiadomienia push, głośny alarm P1, mapę, historię 48 godzin i poradnik bezpieczeństwa.</p>
+      <div class="notice notice--test"><strong>Wydanie testowe.</strong> Każdy build kierowany do TestFlight albo na ścieżkę wewnętrzną Google Play niesie pomarańczowy pasek APLIKACJA TESTOWA. Pasek znika w wydaniu publicznym; ostrzeżenia ćwiczebne pozostają oznaczone słowem „ĆWICZENIE”.</div>
+    </section>
+
+    <section class="section" aria-labelledby="znaczenie"><div class="section-heading"><h2 id="znaczenie">Jak czytać statusy</h2><p>„Build”, „test”, „wysłano do przeglądu”, „zatwierdzono” i „opublikowano” to różne kamienie milowe.</p></div>
+      <div class="card-grid">
+        <article class="card"><span class="number">TEST</span><h3>TestFlight i test wewnętrzny</h3><p>Kanały testowe umożliwiają ocenę aplikacji przez wskazanych testerów, ale nie są równoznaczne z publicznym wydaniem produkcyjnym.</p></article>
+        <article class="card"><span class="number">PRODUKCJA</span><h3>App Store i Google Play</h3><p>Wysłanie do przeglądu, akceptacja i faktyczna dostępność dla użytkowników w 27 państwach Unii Europejskiej są raportowane oddzielnie.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><div>© 2026 Komenda Główna Państwowej Straży Pożarnej</div><nav class="footer-links" aria-label="Informacje uzupełniające"><a href="dane-i-prywatnosc">Dane i prywatność</a><a href="dostepnosc">Dostępność</a><a href="informacje-prawne">Informacje prawne</a></nav></div></footer>
+</body>
+</html>

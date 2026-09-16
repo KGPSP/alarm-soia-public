@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "publicOrigin": "https://alarm-soia.expo.app",
+  "basePath": "/",
+  "productName": "ALARM.SOIA",
+  "language": "pl",
+  "routes": [
+    { "file": "index.html", "path": "" },
+    { "file": "polityka-prywatnosci.html", "path": "polityka-prywatnosci" },
+    { "file": "pomoc.html", "path": "pomoc" },
+    { "file": "bezpieczenstwo.html", "path": "bezpieczenstwo" },
+    { "file": "wydania.html", "path": "wydania" },
+    { "file": "dane-i-prywatnosc.html", "path": "dane-i-prywatnosc" },
+    { "file": "dostepnosc.html", "path": "dostepnosc" },
+    { "file": "informacje-prawne.html", "path": "informacje-prawne" },
+    { "file": "404.html", "path": "404", "noindex": true }
+  ],
+  "publisher": {
+    "name": "Komenda Główna Państwowej Straży Pożarnej",
+    "address": "ul. Podchorążych 38, 00-463 Warszawa",
+    "supportEmail": "informacje@kg.straz.gov.pl",
+    "privacyEmail": "iod@kg.straz.gov.pl"
+  },
+  "storeUrls": {
+    "appStore": null,
+    "googlePlay": null
+  }
+}

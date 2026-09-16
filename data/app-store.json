@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "status": "DRAFT_NOT_SUBMITTED",
+  "primaryLocale": "pl-PL",
+  "locales": ["pl-PL", "en-GB"],
+  "name": {
+    "pl-PL": "ALARM.SOIA",
+    "en-GB": "ALARM.SOIA"
+  },
+  "subtitle": {
+    "pl-PL": "Oficjalne ostrzeżenia KG PSP",
+    "en-GB": "Official Polish public alerts"
+  },
+  "promotionalText": {
+    "pl-PL": "Oficjalne ostrzeżenia Państwowej Straży Pożarnej dla wybranych powiatów. Bez konta, bez reklam. Alarm P1 z głośnym sygnałem także przy wyciszonym telefonie.",
+    "en-GB": "Official Polish public warnings for the counties you choose. No account, no ads. A P1 alarm sounds at full volume even when the phone is muted."
+  },
+  "description": {
+    "pl-PL": "ALARM.SOIA to oficjalna, bezpłatna aplikacja Komendy Głównej Państwowej Straży Pożarnej. Odbiera ostrzeżenia publikowane przez uprawnione służby w standardzie PL-CAP i udostępniane przez serwer alarm.soia.info — dla powiatów, miast i województw, które sam wskażesz. Bez konta, bez reklam, bez czytania położenia telefonu.\n\nJAK TO DZIAŁA\nWybierasz do 10 obszarów (kod TERYT: powiat, miasto albo województwo). Gdy służby opublikują ostrzeżenie dla Twojego obszaru, telefon dostaje powiadomienie z pełną treścią komunikatu, instrukcją i czasem obowiązywania. Nadawcę widzisz na dole każdego alarmu.\n\nCZTERY POZIOMY\n• Alarm · P1 — zagrożenie życia; gra na pełną głośność także przy wyciszonym telefonie (po zgodzie na alerty krytyczne), z wibracją i miganiem latarki, aż go zatrzymasz.\n• Pilne ostrzeżenie · P2 — poważne zagrożenie, np. powódź albo pożar.\n• Ostrzeżenie · P3 — burze, upały, silny wiatr, awarie.\n• Informacja · P4 — komunikaty porządkowe i testy.\nO poziomach P2–P4 powiadamiasz się według własnych potrzeb; alarmu P1 nie da się wyłączyć.\n\nCO JESZCZE\n• Mapa ostrzeżeń z granicami powiatów i liczbą aktywnych komunikatów.\n• Historia z ostatnich 48 godzin, także bez sieci.\n• Dwa sygnały syren do odsłuchania — ogłoszenie i odwołanie alarmu.\n• „Poradnik bezpieczeństwa” MSWiA, MON i RCB (2025) dostępny bez sieci.\n• Ekran Gotowości: czy powiadomienia są włączone, czy alarm przebije wyciszenie i czy serwer potwierdził ten telefon.\n• Ćwiczenia i testy zawsze oznaczone słowem ĆWICZENIE.\n\nPRYWATNOŚĆ\nNa serwer KG PSP trafia wyłącznie rejestracja powiadomień: token push wydany przez Apple, lista wybranych obszarów i poziomów oraz platforma i wersja aplikacji. Brak analityki, reklam i lokalizacji. Rejestrację można usunąć na wniosek do Inspektora Ochrony Danych. Szczegóły: polityka prywatności.\n\nAplikacja jest dodatkowym kanałem ostrzegania. W sytuacji zagrożenia stosuj się do komunikatów służb i poleceń właściwych organów.\n\nWydawca: Komenda Główna Państwowej Straży Pożarnej. Kontakt: informacje@kg.straz.gov.pl",
+    "en-GB": "ALARM.SOIA is the official, free app of the National Headquarters of the State Fire Service of Poland (Komenda Główna Państwowej Straży Pożarnej). It receives warnings published by authorised services in the PL-CAP standard and distributed by the alarm.soia.info server — for the counties, cities and voivodeships you choose. No account, no ads, no reading of your phone's location.\n\nHOW IT WORKS\nChoose up to 10 areas (a county, city or voivodeship identified by its TERYT code). When the services publish a warning for your area, your phone receives a notification with the full message, instructions and validity period. The sender is shown at the bottom of every alarm.\n\nFOUR LEVELS\n• Alarm · P1 — threat to life; plays at full volume even when the phone is muted (after you allow critical alerts), with vibration and a flashing torch, until you stop it.\n• Urgent warning · P2 — serious threat, e.g. flood or fire.\n• Warning · P3 — storms, heat, strong wind, outages.\n• Information · P4 — routine messages and tests.\nYou choose which of P2–P4 notify you; the P1 alarm cannot be switched off.\n\nMORE\n• Map of warnings with county boundaries and the number of active messages.\n• History of the last 48 hours, also offline.\n• Two siren signals to listen to — alarm announcement and all-clear.\n• The Polish “Safety Guide” (MSWiA, MON, RCB, 2025) available offline.\n• Readiness screen: are notifications on, will the alarm override silent mode, has the server confirmed this phone.\n• Exercises and tests are always labelled ĆWICZENIE (exercise).\n\nPRIVACY\nThe only data sent to the KG PSP server is the notification registration: the push token issued by Apple, your chosen areas and levels, the platform and app version. No analytics, no ads, no location. You can ask the Data Protection Officer to delete the registration. Details: privacy policy.\n\nThe app is an additional warning channel. In an emergency follow the instructions of the emergency services and competent authorities.\n\nPublisher: Komenda Główna Państwowej Straży Pożarnej. Contact: informacje@kg.straz.gov.pl"
+  },
+  "keywords": {
+    "pl-PL": "ostrzeżenia,alert,straż,pożar,powódź,burza,wichura,zagrożenie,powiat,syrena,ewakuacja,kryzys",
+    "en-GB": "alerts,warnings,emergency,fire,flood,storm,county,siren,evacuation,hazard,poland,safety"
+  },
+  "releaseNotes": {
+    "pl-PL": "Wersja 1.0.3: wydanie na Androida tą samą drogą co iOS oraz aktualizacje poprawek środowiska. Bez zmian w działaniu aplikacji.",
+    "en-GB": "Version 1.0.3: Android release through the same pipeline as iOS and SDK patch updates. No changes to app behaviour."
+  },
+  "privacyPolicyUrl": "https://alarm-soia.expo.app/polityka-prywatnosci",
+  "supportUrl": "https://alarm-soia.expo.app/pomoc",
+  "marketingUrl": "https://alarm-soia.expo.app",
+  "primaryCategory": "UTILITIES",
+  "secondaryCategory": "WEATHER",
+  "publisherName": "Komenda Główna Państwowej Straży Pożarnej",
+  "copyright": "2026 Komenda Główna Państwowej Straży Pożarnej",
+  "version": "1.0.3",
+  "reviewNotes": "PROJEKT — do wpisania w App Store Connect (App Review Information). 1) Aplikacja nie ma logowania ani konta; pole „Sign-in required” pozostaje odznaczone. 2) Ścieżka testu: pierwsze uruchomienie → „Wybierz obszar” → wpisać „Pabianice” → wybrać powiat pabianicki → „Dalej” → „Włącz powiadomienia” (zgoda systemowa, w tym Critical Alerts) → zakładka Obszary. 3) Treść pojawia się wyłącznie, gdy uprawniona służba opublikuje ostrzeżenie; na czas przeglądu KG PSP publikuje dla wskazanego powiatu ostrzeżenie testowe oznaczone „ĆWICZENIE” (capStatus Exercise) — prosimy o wskazanie okna czasowego; alternatywnie załączamy nagranie pełnego przepływu powiadomienie → Alarm. 4) Critical Alerts: entitlement zatwierdzony przez Apple (wniosek MPJHKAS7D9); używany wyłącznie dla alarmów P1 (zagrożenie życia) publikowanych przez uprawnione służby; użytkownik zatwierdza w systemowym oknie zgody. Time Sensitive dla P2. 5) Uprawnienie kamery służy wyłącznie latarce migającej podczas alarmu P1; obraz nie jest zapisywany ani wysyłany. 6) Brak analityki, reklam i śledzenia; jedyne dane wysyłane na serwer KG PSP to rejestracja powiadomień (token APNs, kody TERYT, priorytety, platforma, wersja). 7) Kontakt: informacje@kg.straz.gov.pl; imię, nazwisko i telefon osoby kontaktowej wpisać w ASC, nie w tym repozytorium.",
+  "reviewContact": null,
+  "notes": "Prywatny kontakt App Review należy wpisać wyłącznie w App Store Connect. Publikacja pozostaje osobno zatwierdzanym działaniem KG PSP."
+}

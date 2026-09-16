@@ -1,0 +1,13 @@
+{
+  "name": "alarm-soia-public",
+  "version": "1.0.0",
+  "private": true,
+  "license": "EUPL-1.2",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test scripts/check-site.test.mjs scripts/check-store-data.test.mjs",
+    "check": "node scripts/check-site.mjs"
+  }
+}

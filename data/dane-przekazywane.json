@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "zrodlo": "fakty z kodu aplikacji ALARM.SOIA 1.0.3 (odczyt 2026-09-16); podstawa polityki prywatności i deklaracji sklepowych",
+  "host": "https://alarm.soia.info",
+  "administrator": "Komendant Główny Państwowej Straży Pożarnej, ul. Podchorążych 38, 00-463 Warszawa",
+  "kontakt": "informacje@kg.straz.gov.pl",
+  "iod": "iod@kg.straz.gov.pl",
+  "zadania": [
+    { "id": "rejestracja-push", "metoda": "POST/PATCH/DELETE", "sciezka": "/api/public/devices/{token}", "pola": ["token push (APNs lub FCM)", "platforma (ios/android)", "environment (development/production)", "wersja aplikacji (appVersion)", "lista kodów TERYT obserwowanych obszarów (terytList)", "priorytety, o których powiadamiać (priorities)"], "cel": "doręczanie powiadomień push o ostrzeżeniach dla wybranych obszarów", "retencja": "do usunięcia na wniosek do IOD albo w ramach porządkowania nieaktywnych rejestracji (okres do ustalenia przez administratora); w wersji 1.0.3 aplikacja nie ma kontrolki cofnięcia zgody wysyłającej DELETE; serwer nie tworzy konta użytkownika" },
+    { "id": "status-rejestracji", "metoda": "GET", "sciezka": "/api/public/devices/{token}/status", "pola": ["token push (w adresie)"], "cel": "sprawdzenie w ekranie Gotowości, czy serwer potwierdził telefon", "retencja": "jak rejestracja" },
+    { "id": "lista-ostrzezen", "metoda": "GET", "sciezka": "/api/public/alerts, /api/public/alerts/{identifier}", "pola": ["brak danych użytkownika (parametry: kody TERYT, filtr aktywnych)"], "cel": "pobranie oficjalnych ostrzeżeń PL-CAP (polling co 30 s w aktywnej aplikacji)", "retencja": "logi serwera KG PSP wg zasad hostingu" },
+    { "id": "granice", "metoda": "GET", "sciezka": "/api/geo/boundaries?teryt=…", "pola": ["kody TERYT obszarów"], "cel": "rysowanie granic powiatów na mapie", "retencja": "jak wyżej" },
+    { "id": "aktualizacje-ota", "metoda": "GET", "sciezka": "https://u.expo.dev/f1250e0f-6b74-4539-92de-6707cfb26a3f", "pola": ["identyfikator instalacji EAS (losowy, niepowiązany ze sprzętem ani kontem)", "wersja runtime"], "cel": "sprawdzanie aktualizacji kodu aplikacji (expo-updates, dostawca Expo/EAS)", "retencja": "wg zasad Expo" }
+  ],
+  "uslugi_platformowe": [
+    { "id": "apple-maps", "platforma": "iOS", "dostawca": "Apple", "cel": "podkład mapy (kafelki) na ekranie Mapa", "uwaga": "Apple przetwarza zapytania o kafelki wg własnych zasad; aplikacja nie czyta lokalizacji urządzenia" },
+    { "id": "apns-fcm", "platforma": "iOS/Android", "dostawca": "Apple / Google (Firebase Cloud Messaging)", "cel": "doręczanie powiadomień push; token wydaje platforma", "uwaga": "Firebase zbiera token FCM i wersję aplikacji na potrzeby doręczeń (ujawnienie SDK)" }
+  ],
+  "brak": [
+    "lokalizacja urządzenia (GPS) — aplikacja jej nie czyta; obszary wybiera użytkownik ręcznie",
+    "analityka, reklamy, identyfikator reklamowy (AD_ID)",
+    "raportowanie awarii — SDK Sentry jest w pakiecie, ale Sentry.init nie jest wywoływane",
+    "konto użytkownika, logowanie, hasła",
+    "mikrofon, nagrywanie, odtwarzanie w tle",
+    "kamera poza latarką — obraz z aparatu nie jest zapisywany ani wysyłany (latarka miga podczas alarmu P1, zgoda pytana raz przy pierwszym alarmie)"
+  ],
+  "lokalnie_na_telefonie": [
+    "baza SQLite: obserwowane obszary (miejsca), ostrzeżenia i komunikaty z 48 godzin, przeczytania, stan rejestracji push, ustawienia progów",
+    "bezpieczny magazyn systemu (secure store): stan sesji technicznej — bez tokenów użytkownika",
+    "usunięcie: odinstalowanie aplikacji lub usunięcie danych aplikacji w systemie; rejestracja na serwerze — na wniosek do IOD (brak kontrolki cofnięcia zgody w 1.0.3)"
+  ],
+  "uprawnienia": {
+    "ios": ["powiadomienia (w tym Critical Alerts i Time Sensitive — entitlement Apple MPJHKAS7D9, tylko wariant production)", "kamera (latarka podczas alarmu P1)"],
+    "android": ["POST_NOTIFICATIONS", "CAMERA (latarka)", "VIBRATE", "RECEIVE_BOOT_COMPLETED", "WAKE_LOCK", "INTERNET, ACCESS_NETWORK_STATE", "c2dm.permission.RECEIVE (FCM)"]
+  }
+}

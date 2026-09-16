@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "status": "DRAFT_NOT_SUBMITTED",
+  "primaryLanguage": "pl",
+  "localizations": ["pl-PL", "en-GB"],
+  "category": "UTILITIES",
+  "secondaryCategory": "WEATHER",
+  "price": "FREE",
+  "distribution": "PUBLIC",
+  "releaseType": "MANUAL",
+  "countries": [
+    "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE",
+    "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"
+  ],
+  "deviceFamilies": ["IPHONE"],
+  "requiresAccount": false,
+  "signInRequiredForReview": false,
+  "dataCollected": true,
+  "appPrivacy": [
+    {
+      "type": "Identifiers/Device ID",
+      "purposes": ["App Functionality"],
+      "linkedToUser": true,
+      "usedForTracking": false,
+      "note": "token push (APNs) — rejestracja powiadomień na serwerze KG PSP; wariant linkedToUser=false wymaga opinii IOD"
+    },
+    {
+      "type": "Other Data/Other Data Types",
+      "purposes": ["App Functionality"],
+      "linkedToUser": true,
+      "usedForTracking": false,
+      "note": "kody TERYT, priorytety, platforma, environment, wersja aplikacji (ten sam rekord rejestracji)"
+    }
+  ],
+  "dataNotCollected": ["Location", "Usage Data", "Diagnostics", "Contact Info", "User Content"],
+  "ageRating": {
+    "proposed": "4+",
+    "alternative": "13+ jeśli rozdział „Pierwsza pomoc” poradnika PDF = Medical or Treatment Information: Infrequent",
+    "decision": "KG PSP",
+    "questionnaire": {
+      "parentalControlsOrAgeAssurance": "None",
+      "unrestrictedWebAccess": false,
+      "userGeneratedContent": false,
+      "messaging": false,
+      "advertising": false,
+      "socialFeatures": false,
+      "profanityOrCrudeHumor": "None",
+      "horrorOrFearThemes": "None",
+      "alcoholTobaccoOrDrugs": "None",
+      "sexualContentOrNudity": "None",
+      "violence": "None",
+      "gambling": "None",
+      "contests": "None",
+      "healthOrWellnessTopics": "None",
+      "medicalOrTreatmentInformation": "DO_DECYZJI — None (4+) albo Infrequent (13+)"
+    }
+  },
+  "contentRights": {
+    "status": "DO_DECYZJI",
+    "note": "„Poradnik bezpieczeństwa” MSWiA, MON i RCB (2025) dystrybuowany w aplikacji — potwierdzić prawo do dystrybucji przed oświadczeniem o prawach do treści osób trzecich"
+  },
+  "dsa": {
+    "traderStatus": "DO_DECYZJI",
+    "note": "Bezpłatna, ustawowa usługa publiczna bez przychodu i reklam — przesłanki non-trader, ale definicja DSA obejmuje osoby prawne „publicly owned”; decyzja służb prawnych KG PSP/IOD. Jeśli trader: adres ul. Podchorążych 38, 00-463 Warszawa, e-mail informacje@kg.straz.gov.pl, telefon KG PSP — publicznie na stronie produktu."
+  },
+  "usesNonExemptEncryption": false,
+  "criticalAlertsRequest": "MPJHKAS7D9",
+  "entitlements": ["critical-alerts", "time-sensitive"],
+  "permissions": {
+    "notifications": "alerty, dźwięk, plakietka, Critical Alerts (P1), Time Sensitive (P2)",
+    "camera": "wyłącznie latarka podczas alarmu P1"
+  },
+  "automaticRelease": false,
+  "phasedRelease": false,
+  "version": "1.0.3",
+  "build": null,
+  "supportEmail": "informacje@kg.straz.gov.pl",
+  "privacyEmail": "iod@kg.straz.gov.pl"
+}
