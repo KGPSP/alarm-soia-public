@@ -31,6 +31,7 @@ ani tabletów z Androidem (patrz „Decyzje przed wysyłką”).
 | `data/app-store.json`, `data/app-store-declarations.json` | wpis i deklaracje App Store Connect (pl-PL + en-GB) |
 | `data/google-play.json`, `data/google-play-declarations.json` | wpis i deklaracje Play Console (pl-PL + en-GB) |
 | `scripts/` | `check-site.mjs` (witryna), `check-store-data.mjs` (pakiet sklepowy) i ich testy `node --test` |
+| `KONSOLE.md` | krok po kroku: co wpisać w Play Console i App Store Connect z plików `data/` i które decyzje blokują wysyłkę |
 
 Linki wewnętrzne w HTML są względne i bez rozszerzeń (`href="pomoc"`, `href="assets/…"`),
 a `canonical`, `og:url`, `sitemap.xml` i `robots.txt` są absolutne z `publicOrigin`. Jedyny wyjątek
