@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Wydania aplikacji ALARM.SOIA: statusy kanałów testowych i sklepowych oraz najważniejsze zmiany w wersjach 1.0.3 i 1.0.2.">
+  <meta name="description" content="Wydania aplikacji ALARM.SOIA: statusy kanałów testowych i sklepowych oraz najważniejsze zmiany w wersjach od 1.0.2 do 1.0.5.">
   <meta name="theme-color" content="#B42318">
   <title>Wydania — ALARM.SOIA</title>
   <link rel="canonical" href="https://kgpsp.github.io/alarm-soia-public/wydania">
@@ -26,10 +26,28 @@
   <main id="tresc" class="content">
     <header class="page-head"><h1>Wydania</h1><p class="lead">Kanały testowe i publikacja sklepowa mają oddzielne statusy. Poniższy zapis nie zastępuje bieżącego stanu w konsoli danego sklepu.</p></header>
 
-    <section class="status-grid" aria-label="Status kanałów na 16 września 2026">
-      <article class="status-card status-card--observed"><span class="status-label">Wydanie testowe</span><h2>TestFlight (iPhone)</h2><p>Buildy wersji 1.0.x są udostępniane testerom w TestFlight. Build testowy ma pasek APLIKACJA TESTOWA i może otrzymywać ostrzeżenia ćwiczebne.</p></article>
-      <article class="status-card status-card--observed"><span class="status-label">Wydanie testowe</span><h2>Google Play — test wewnętrzny</h2><p>Wersja 1.0.3 została przesłana na ścieżkę wewnętrzną Google Play. Promocja do produkcji jest osobną decyzją w Play Console.</p></article>
+    <section class="status-grid" aria-label="Status kanałów na 21 września 2026">
+      <article class="status-card status-card--observed"><span class="status-label">Wydanie testowe</span><h2>TestFlight (iPhone)</h2><p>Wersja 1.0.5 jest udostępniana testerom w TestFlight. To kandydat do wydania publicznego: nie ma już paska APLIKACJA TESTOWA; ostrzeżenia ćwiczebne pozostają oznaczone słowem „ĆWICZENIE”.</p></article>
+      <article class="status-card status-card--observed"><span class="status-label">Wydanie testowe</span><h2>Google Play — test wewnętrzny</h2><p>Wersja 1.0.5 została przesłana na ścieżkę wewnętrzną Google Play. Promocja do produkcji jest osobną decyzją w Play Console.</p></article>
       <article class="status-card status-card--pending"><span class="status-label">W przygotowaniu</span><h2>App Store i Google Play</h2><p>Wpisy sklepowe, polityka prywatności i deklaracje są przygotowywane. Publikacja wymaga osobnej zgody Komendy Głównej PSP i przeglądu w każdym sklepie.</p></article>
+    </section>
+
+    <section class="section" aria-labelledby="v105"><div class="section-heading"><h2 id="v105">Wersja 1.0.5 — 21 września 2026</h2><p>Wydanie „kandydat publiczny”: pierwsza wersja bez oznaczenia testowego, przygotowana do przeglądu w sklepach. Bez zmian w logice ostrzeżeń i powiadomień.</p></div>
+      <ul>
+        <li>pasek APLIKACJA TESTOWA wyłączony; ikony paska statusu dopasowują się do tła — także na pełnoekranowym alarmie;</li>
+        <li>ekran ostrzeżenia nie zostaje pusty: przy braku połączenia aplikacja mówi o tym wprost i daje przyciski „Spróbuj ponownie” oraz „Wróć”, a podczas pobierania widać „Ładuję ostrzeżenie”;</li>
+        <li>stan pobierania ostrzeżenia jest odczytywany przez czytniki ekranu na Androidzie;</li>
+        <li>aktualizacje poprawek środowiska Expo SDK 57.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="v104"><div class="section-heading"><h2 id="v104">Wersja 1.0.4 — 17 września 2026</h2><p>Wydanie „build testowy przed sklepami”: wersja dla testerów z jawnym oznaczeniem testowym i kompletem materiałów wymaganych przez sklepy.</p></div>
+      <ul>
+        <li>pasek APLIKACJA TESTOWA nad całą nawigacją (wycofany w wersji 1.0.5);</li>
+        <li>link do polityki prywatności na ekranie „O systemie”;</li>
+        <li>strona publiczna aplikacji z polityką prywatności, pomocą i danymi sklepowymi;</li>
+        <li>aktualizacje poprawek środowiska Expo SDK 57.</li>
+      </ul>
     </section>
 
     <section class="section" aria-labelledby="v103"><div class="section-heading"><h2 id="v103">Wersja 1.0.3 — 8 września 2026</h2><p>Wydanie „Android w sklepie”: pierwsza wysyłka na ścieżkę wewnętrzną Google Play tą samą drogą co iOS. Bez zmian w działaniu aplikacji.</p></div>
@@ -55,7 +73,7 @@
 
     <section class="section" aria-labelledby="wczesniejsze"><div class="section-heading"><h2 id="wczesniejsze">Wersje 1.0.0 i 1.0.1</h2><p>Wydania wewnętrzne poprzedzające dziennik zmian.</p></div>
       <p>Wersje 1.0.0 i 1.0.1 były pierwszymi buildami testowymi (iPhone, TestFlight) i poprzedzają wprowadzenie publicznego dziennika zmian. Ich zakres obejmował rdzeń aplikacji: wybór obszarów kodem TERYT, pobieranie ostrzeżeń PL-CAP, powiadomienia push, głośny alarm P1, mapę, historię 48 godzin i poradnik bezpieczeństwa.</p>
-      <div class="notice notice--test"><strong>Wydanie testowe.</strong> Każdy build kierowany do TestFlight albo na ścieżkę wewnętrzną Google Play niesie pomarańczowy pasek APLIKACJA TESTOWA. Pasek znika w wydaniu publicznym; ostrzeżenia ćwiczebne pozostają oznaczone słowem „ĆWICZENIE”.</div>
+      <div class="notice notice--test"><strong>Wydania testowe.</strong> Buildy kierowane do TestFlight i na ścieżkę wewnętrzną Google Play do wersji 1.0.4 niosły pomarańczowy pasek APLIKACJA TESTOWA. Od wersji 1.0.5 paska nie ma; ostrzeżenia ćwiczebne pozostają oznaczone słowem „ĆWICZENIE”.</div>
     </section>
 
     <section class="section" aria-labelledby="znaczenie"><div class="section-heading"><h2 id="znaczenie">Jak czytać statusy</h2><p>„Build”, „test”, „wysłano do przeglądu”, „zatwierdzono” i „opublikowano” to różne kamienie milowe.</p></div>

@@ -24,8 +24,8 @@
     "en-GB": "alerts,warnings,emergency,fire,flood,storm,county,siren,evacuation,hazard,poland,safety"
   },
   "releaseNotes": {
-    "pl-PL": "Wersja 1.0.4: link do polityki prywatności na ekranie O systemie, wydanie testowe oznaczone paskiem APLIKACJA TESTOWA oraz aktualizacje poprawek środowiska.",
-    "en-GB": "Version 1.0.4: privacy policy link on the About screen, test release marked with the TEST APP bar, and SDK patch updates."
+    "pl-PL": "Wersja 1.0.5: ekran ostrzeżenia mówi wprost, gdy nie ma połączenia, i pozwala ponowić albo wrócić; ikony paska statusu dopasowane do tła; bez paska wersji testowej; aktualizacje poprawek środowiska.",
+    "en-GB": "Version 1.0.5: the alert screen now says when there is no connection and lets you retry or go back; status bar icons adapt to the background; the test-version bar is gone; SDK patch updates."
   },
   "privacyPolicyUrl": "https://kgpsp.github.io/alarm-soia-public/polityka-prywatnosci",
   "supportUrl": "https://kgpsp.github.io/alarm-soia-public/pomoc",
@@ -34,7 +34,7 @@
   "secondaryCategory": "WEATHER",
   "publisherName": "Komenda Główna Państwowej Straży Pożarnej",
   "copyright": "2026 Komenda Główna Państwowej Straży Pożarnej",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "reviewNotes": "PROJEKT — do wpisania w App Store Connect (App Review Information). 1) Aplikacja nie ma logowania ani konta; pole „Sign-in required” pozostaje odznaczone. 2) Ścieżka testu: pierwsze uruchomienie → „Wybierz obszar” → wpisać „Pabianice” → wybrać powiat pabianicki → „Dalej” → „Włącz powiadomienia” (zgoda systemowa, w tym Critical Alerts) → zakładka Obszary. 3) Treść pojawia się wyłącznie, gdy uprawniona służba opublikuje ostrzeżenie; na czas przeglądu KG PSP publikuje dla wskazanego powiatu ostrzeżenie testowe oznaczone „ĆWICZENIE” (capStatus Exercise) — prosimy o wskazanie okna czasowego; alternatywnie załączamy nagranie pełnego przepływu powiadomienie → Alarm. 4) Critical Alerts: entitlement zatwierdzony przez Apple (wniosek MPJHKAS7D9); używany wyłącznie dla alarmów P1 (zagrożenie życia) publikowanych przez uprawnione służby; użytkownik zatwierdza w systemowym oknie zgody. Time Sensitive dla P2. 5) Uprawnienie kamery służy wyłącznie latarce migającej podczas alarmu P1; obraz nie jest zapisywany ani wysyłany. 6) Brak analityki, reklam i śledzenia; jedyne dane wysyłane na serwer KG PSP to rejestracja powiadomień (token APNs, kody TERYT, priorytety, platforma, wersja). 7) Kontakt: informacje@kg.straz.gov.pl; imię, nazwisko i telefon osoby kontaktowej wpisać w ASC, nie w tym repozytorium.",
   "reviewContact": null,
   "notes": "Prywatny kontakt App Review należy wpisać wyłącznie w App Store Connect. Publikacja pozostaje osobno zatwierdzanym działaniem KG PSP."
