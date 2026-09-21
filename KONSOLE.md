@@ -94,7 +94,7 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
 | 1 | ~~Status tradera DSA~~ — **rozstrzygnięte 2026-09-21: non-trader** | App Store Connect | `dsa.traderStatus: NON_TRADER` |
 | 2 | ~~Ocena wieku~~ — **rozstrzygnięte 2026-09-21: `None`, wynik 4+** | App Store Connect | `ageRating.questionnaire.medicalOrTreatmentInformation: None` |
 | 3 | Publiczny telefon KG PSP | Play Console | `developerProfile.phone` |
-| 4 | Akceptacja polityki prywatności przez IOD (data, podstawa prawna, okres porządkowania) | strona + obie konsole | `status` we wszystkich plikach `data/` |
+| 4 | ~~Akceptacja polityki prywatności przez IOD~~ — **rozstrzygnięte 2026-09-21** (obowiązuje od 21.09.2026, art. 6 ust. 1 lit. e RODO, standardowe klauzule umowne) | strona + obie konsole | polityka na stronie; `status` w `data/` zmienia się przy wysyłce |
 | 5 | Pismo „Government apps” (równolegle) | Play Console | `governmentAppProof` |
 | 6 | Prawa do poradnika PDF (równolegle) | App Store Connect | `contentRights` |
 

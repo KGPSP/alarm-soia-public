@@ -27,7 +27,7 @@
     <nav class="site-nav" aria-label="Główna nawigacja"><a href="./">Aplikacja</a><a href="polityka-prywatnosci" aria-current="page">Prywatność</a><a href="pomoc">Pomoc</a><a href="bezpieczenstwo">Bezpieczeństwo</a><a href="wydania">Wydania</a></nav>
   </div></header>
   <main id="tresc" class="content content--narrow">
-    <header class="page-head"><h1>Polityka prywatności</h1><p class="lead">Informacja o przetwarzaniu danych w aplikacji mobilnej ALARM.SOIA. Obowiązuje od 16 września 2026 r. (projekt do akceptacji IOD).</p></header>
+    <header class="page-head"><h1>Polityka prywatności</h1><p class="lead">Informacja o przetwarzaniu danych w aplikacji mobilnej ALARM.SOIA. Obowiązuje od 21 września 2026 r.</p></header>
 
     <section class="document-section" aria-labelledby="administrator"><h2 id="administrator">1. Administrator i kontakt</h2>
       <p>Administratorem danych osobowych przetwarzanych w związku z działaniem aplikacji jest Komendant Główny Państwowej Straży Pożarnej, ul. Podchorążych 38, 00-463 Warszawa.</p>
@@ -62,7 +62,7 @@
         <li><strong>Granice administracyjne</strong> — na ekranie Mapa aplikacja pobiera obrysy wybranych powiatów, przekazując ich kody TERYT.</li>
         <li><strong>Stan rejestracji</strong> — na ekranie Gotowości aplikacja sprawdza (nie częściej niż raz na dobę), czy serwer potwierdził ten telefon; żądanie zawiera token push w adresie.</li>
       </ul>
-      <p>Podstawą przetwarzania jest realizacja zadań publicznych KG PSP w zakresie ostrzegania i alarmowania ludności; wskazanie właściwego przepisu (art. 6 ust. 1 RODO) zostanie potwierdzone przez IOD w wersji ostatecznej niniejszej polityki (projekt).</p>
+      <p>Podstawą przetwarzania jest art. 6 ust. 1 lit. e RODO — wykonywanie zadania realizowanego w interesie publicznym, którym jest ostrzeganie i alarmowanie ludności przez KG PSP.</p>
     </section>
 
     <section class="document-section" aria-labelledby="lokalne"><h2 id="lokalne">4. Dane przechowywane tylko na telefonie</h2>
@@ -89,7 +89,7 @@
         <li><strong>Apple Maps (tylko iPhone):</strong> podkład mapy na ekranie Mapa pochodzi z map Apple; zapytania o kafelki mapy przetwarza Apple według własnych zasad. Aplikacja nie przekazuje Apple położenia użytkownika, bo go nie zna.</li>
         <li><strong>Aktualizacje kodu aplikacji (Expo / EAS):</strong> przy uruchomieniu aplikacja sprawdza na serwerze dostawcy Expo, czy jest dostępna aktualizacja swojego kodu. Żądanie zawiera losowy identyfikator instalacji (niepowiązany ze sprzętem ani kontem) i wersję środowiska uruchomieniowego; dane te przetwarza Expo według własnych zasad.</li>
         <li><strong>Sklepy i system:</strong> pobranie aplikacji z App Store lub Google Play oraz działanie systemu iOS lub Android podlega zasadom Apple, Google i producenta telefonu, niezależnym od niniejszej polityki.</li>
-        <li><strong>Przekazywanie poza EOG (projekt):</strong> Apple, Google i Expo mają siedziby w Stanach Zjednoczonych, więc token push, identyfikator instalacji i zapytania o mapę mogą być przetwarzane poza Europejskim Obszarem Gospodarczym. Podstawę takiego przekazania (decyzja Komisji Europejskiej o adekwatności w ramach EU-US Data Privacy Framework albo standardowe klauzule umowne) oraz miejsce przetwarzania rejestracji przez serwer <span class="mono">alarm.soia.info</span> u dostawcy hostingu wskaże IOD w wersji ostatecznej niniejszej polityki.</li>
+        <li><strong>Przekazywanie poza EOG:</strong> Apple, Google i Expo mają siedziby w Stanach Zjednoczonych, więc token push, identyfikator instalacji i zapytania o mapę mogą być przetwarzane poza Europejskim Obszarem Gospodarczym. Podstawą takiego przekazania są standardowe klauzule umowne zatwierdzone przez Komisję Europejską. Serwer <span class="mono">alarm.soia.info</span> działa u zewnętrznego dostawcy hostingu; jeżeli rejestracje są przetwarzane poza Europejskim Obszarem Gospodarczym, stosuje się tę samą podstawę.</li>
       </ul>
     </section>
 
@@ -101,7 +101,7 @@
     <section class="document-section" aria-labelledby="usuwanie"><h2 id="usuwanie">8. Usunięcie danych</h2>
       <ul>
         <li><strong>Wyłączenie powiadomień</strong> w ustawieniach telefonu zatrzymuje doręczanie; w tej wersji aplikacja nie ma jeszcze w Ustawieniach przycisku cofnięcia zgody, który sam wysyłałby żądanie usunięcia rejestracji — taka funkcja jest planowana w kolejnej wersji.</li>
-        <li><strong>Odinstalowanie aplikacji</strong> usuwa dane z telefonu, a token push traci ważność po stronie Apple lub Google; rejestracja na serwerze jest usuwana na wniosek albo zgodnie z zasadami porządkowania nieaktywnych rejestracji (projekt: okres do ustalenia przez administratora).</li>
+        <li><strong>Odinstalowanie aplikacji</strong> usuwa dane z telefonu, a token push traci ważność po stronie Apple lub Google; rejestracja na serwerze jest usuwana na wniosek, a serwer usuwa ją też sam, gdy przy wysyłce powiadomienia Apple lub Google zgłoszą, że token jest nieważny (na przykład po odinstalowaniu aplikacji).</li>
         <li><strong>Wniosek do IOD</strong> — w każdej chwili możesz zwrócić się na adres <a href="mailto:iod@kg.straz.gov.pl">iod@kg.straz.gov.pl</a>. Ponieważ serwer nie prowadzi kont, KG PSP nie potrafi samodzielnie powiązać rejestracji z osobą — we wniosku warto podać przybliżoną datę włączenia powiadomień i wybrane obszary, a po usunięciu rejestracji wyłączyć powiadomienia w telefonie, żeby aplikacja nie zarejestrowała go ponownie.</li>
       </ul>
     </section>

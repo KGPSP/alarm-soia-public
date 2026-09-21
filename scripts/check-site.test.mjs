@@ -140,7 +140,7 @@ test("PRIVACY-FACTS polityka prywatności pokrywa każde pole z data/dane-przeka
   for (const pattern of [
     /token/iu, /platform/iu, /environment/iu, /wersj/iu, /TERYT/u, /priorytet/iu,
     /alarm\.soia\.info/u, /Apple Maps/u, /APNs/u, /FCM/u, /analityk/iu, /awari/iu, /lokalizacj/iu,
-    /iod@kg\.straz\.gov\.pl/u, /usun/iu, /Komendant Główny Państwowej Straży Pożarnej/u, /16 września 2026/u, /48 godzin/u,
+    /iod@kg\.straz\.gov\.pl/u, /usun/iu, /Komendant Główny Państwowej Straży Pożarnej/u, /21 września 2026/u, /art\. 6 ust\. 1 lit\. e RODO/u, /standardowe klauzule umowne/u, /48 godzin/u,
   ]) {
     assert.match(privacy, pattern);
   }

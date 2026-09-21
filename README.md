@@ -112,9 +112,12 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
 9. **Etykieta treści AI dla grafiki promocyjnej (Google Play)** — tło `feature-graphic.png`
    i `og-image.png` powstało z użyciem generatora obrazów; przy wgrywaniu w Play Console zaznaczyć
    etykietę treści AI. Zrzuty ekranu pokazują prawdziwy interfejs aplikacji.
-10. **Polityka prywatności = projekt** — data obowiązywania, podstawa prawna (art. 6 ust. 1 RODO),
-    okres porządkowania nieaktywnych rejestracji i „Linked to You” dla tokenu push wymagają
-    akceptacji IOD (`status: DRAFT_NOT_SUBMITTED` we wszystkich plikach `data/`).
+10. **Polityka prywatności** — zaakceptowana, rozstrzygnięte 2026-09-21 (wartości przekazane przez
+    właściciela produktu): obowiązuje od 21 września 2026 r.; podstawa prawna art. 6 ust. 1 lit. e
+    RODO; przekazywanie poza EOG — standardowe klauzule umowne; rejestracja usuwana na wniosek albo
+    przez serwer po zgłoszeniu nieważnego tokenu przez Apple lub Google (serwer nie ma porządkowania
+    po czasie); token push zadeklarowany jako „Linked to You”. Pliki `data/` zostają w stanie
+    `DRAFT_NOT_SUBMITTED` do chwili wysyłki do recenzji (wymóg walidatora).
 11. **Ikona 512** — `icon-512.png` jest 32-bitowym PNG z kanałem alfa (typ koloru 6), tak jak opisuje
     ją Play Console; skrypt kontrolny dopuszcza też wariant 24-bitowy, gdyby konsola zażądała pliku
     bez przezroczystości.
