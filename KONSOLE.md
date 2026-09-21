@@ -26,8 +26,9 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
    tło powstało z generatora), zrzuty telefonu `site/assets/google-play/phone/01–05.png`
    (1080×1920). Zrzuty tabletów: pomijamy (README poz. 7).
 2. **Ustawienia sklepu**: kategoria „Narzędzia” (`category: TOOLS`), tagi z listy konsoli
-   (`tags.note`), dane kontaktowe: e-mail wsparcia, strona produktu, **DECYZJA: publiczny numer
-   telefonu** (`developerProfile.phone`; pole wymagane i widoczne publicznie dla konta organizacji).
+   (`tags.note`), dane kontaktowe: e-mail wsparcia, strona produktu, publiczny numer
+   telefonu +48 47 722 31 12 (`developerProfile.phone`, rozstrzygnięte 2026-09-21; pole wymagane
+   i widoczne publicznie dla konta organizacji).
 3. **Polityka → Zawartość aplikacji**, po kolei:
    - *Polityka prywatności*: adres z tabeli wyżej.
    - *Reklamy*: nie (`ads: false`).
@@ -94,7 +95,7 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
 |---|---|---|---|
 | 1 | ~~Status tradera DSA~~ — **rozstrzygnięte 2026-09-21: non-trader** | App Store Connect | `dsa.traderStatus: NON_TRADER` |
 | 2 | ~~Ocena wieku~~ — **rozstrzygnięte 2026-09-21: `None`, wynik 4+** | App Store Connect | `ageRating.questionnaire.medicalOrTreatmentInformation: None` |
-| 3 | Publiczny telefon KG PSP | Play Console | `developerProfile.phone` |
+| 3 | ~~Publiczny telefon KG PSP~~ — **rozstrzygnięte 2026-09-21: +48 47 722 31 12** | Play Console | `developerProfile.phone` |
 | 4 | ~~Akceptacja polityki prywatności przez IOD~~ — **rozstrzygnięte 2026-09-21** (obowiązuje od 21.09.2026, art. 6 ust. 1 lit. e RODO, standardowe klauzule umowne) | strona + obie konsole | polityka na stronie; `status` w `data/` zmienia się przy wysyłce |
 | 5 | Pismo „Government apps” (równolegle) | Play Console | `governmentAppProof` |
 | 6 | Prawa do poradnika PDF (równolegle) | App Store Connect | `contentRights` |

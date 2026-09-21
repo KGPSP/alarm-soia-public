@@ -94,8 +94,9 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
    (`None`), wynik **4+**; poradnik traktowany jako ogólna informacja o bezpieczeństwie.
 3. **Content Rights poradnika PDF (Apple)** — „Poradnik bezpieczeństwa” MSWiA, MON i RCB (2025):
    potwierdzić prawo do dystrybucji w aplikacji przed oświadczeniem o prawach do treści osób trzecich.
-4. **Publiczny telefon KG PSP w profilu dewelopera Google Play** — pole wymagane i publiczne dla
-   konta organizacji; `data/google-play-declarations.json` → `developerProfile.phone`.
+4. **Publiczny telefon KG PSP w profilu dewelopera Google Play** — rozstrzygnięte 2026-09-21:
+   +48 47 722 31 12 (Biuro Informatyki i Łączności KG PSP); `data/google-play-declarations.json` →
+   `developerProfile.phone`.
 5. **Pismo do deklaracji „Government apps” (Google Play)** — dokument KG PSP na papierze firmowym
    z danymi kontaktowymi do weryfikacji; konto organizacji w domenie `kg.straz.gov.pl`.
 6. **Hosting** — rozstrzygnięte 2026-09-16: GitHub Pages pod `https://kgpsp.github.io/alarm-soia-public/`
