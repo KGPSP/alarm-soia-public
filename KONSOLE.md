@@ -75,8 +75,11 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
 6. **Wersja → Informacje o wersji** (pl-PL i en-GB): tekst promocyjny `promotionalText` (≤170),
    opis `description` (≤4000), słowa kluczowe `keywords` (≤100 bajtów), adres wsparcia
    i marketingu z tabeli wyżej, informacje o wydaniu `releaseNotes`, copyright `copyright`.
-   Zrzuty iPhone 6,9" `site/assets/app-store/iphone-6.9/01–06.png` (1320×2868); tylko iPhone
-   (`deviceFamilies`).
+   Zrzuty iPhone 6,9" `site/assets/app-store/iphone-6.9/01–06.png` (1320×2868); slot 6,5"
+   nie przyjmuje tego wymiaru — dla niego gotowy zestaw `site/assets/app-store/iphone-6.5/01–06.png`
+   (1284×2778, ta sama kompozycja). Tylko iPhone (`deviceFamilies`). Stan konsoli 2026-09-21:
+   w wersji 1.0.4 slot 6,5" ma jeszcze sześć zrzutów z paskiem APLIKACJA TESTOWA — przed wysłaniem
+   do recenzji podmienić na zestaw z repozytorium (bez paska).
 7. **Informacje do recenzji** (`reviewNotes`): logowanie niewymagane; ścieżka testu przez kreator
    pierwszego uruchomienia; okno czasowe na ostrzeżenie testowe ĆWICZENIE dla wskazanego powiatu
    albo nagranie przepływu; Critical Alerts (entitlement zatwierdzony, wniosek `MPJHKAS7D9`) tylko

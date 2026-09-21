@@ -25,7 +25,7 @@ ani tabletów z Androidem (patrz „Decyzje przed wysyłką”).
 |---|---|
 | `site/` | katalog publikowany 1:1 — płaskie pliki `.html` (`pomoc.html` → `/pomoc`), `404.html`, `robots.txt`, `sitemap.xml`, `assets/` |
 | `site/assets/css/alarm-<8 hex>.css` | jedyny arkusz stylów; nazwa = pierwsze 8 znaków SHA-256 treści (ochrona przed starym cache) |
-| `site/assets/` | znak SVG, ikona 512, grafika promocyjna 1024×500, obraz OG 1200×630, zrzuty App Store (1320×2868) i Google Play (1080×1920) |
+| `site/assets/` | znak SVG, ikona 512, grafika promocyjna 1024×500, obraz OG 1200×630, zrzuty App Store (1320×2868 oraz 1284×2778 dla slotu 6,5") i Google Play (1080×1920) |
 | `data/site.json` | origin publiczny, ścieżka bazowa, lista tras, wydawca, adresy sklepów (puste do publikacji) |
 | `data/dane-przekazywane.json` | fakty o danych opuszczających telefon — jedyne źródło prawdy dla polityki prywatności |
 | `data/app-store.json`, `data/app-store-declarations.json` | wpis i deklaracje App Store Connect (pl-PL + en-GB) |
@@ -104,8 +104,11 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
    wskazuje GitHub Pages; zmiana origin = nowa wersja aplikacji i edycja obu konsol.
 7. **Zrzuty tabletów Android (opcjonalne)** — aplikacja jest dostępna na tabletach Android
    (`supports-screens`); zrzuty 7"/10" nie są wymagane do publikacji, ale Play może je promować.
-8. **Odświeżenie zrzutów przed wydaniem publicznym** — obecne zrzuty pochodzą z buildu testowego
-   (pasek APLIKACJA TESTOWA, ostrzeżenia „ĆWICZENIE”); przed promocją do sprzedaży wykonać nowe.
+8. **Odświeżenie zrzutów przed wydaniem publicznym** — wykonane 2026-09-21: zrzuty pochodzą
+   z kandydata wydania publicznego (bez paska APLIKACJA TESTOWA). Widoczne ostrzeżenia pozostają
+   ćwiczeniami oznaczonymi „ĆWICZENIE” — materiały sklepowe nie pokazują komunikatu, który mógłby
+   zostać wzięty za prawdziwy alarm. Po zmianie interfejsu widocznego na zrzutach wykonać je ponownie
+   (App Store 6,9" i 6,5", Google Play); wgranie do konsol — `KONSOLE.md`.
 9. **Etykieta treści AI dla grafiki promocyjnej (Google Play)** — tło `feature-graphic.png`
    i `og-image.png` powstało z użyciem generatora obrazów; przy wgrywaniu w Play Console zaznaczyć
    etykietę treści AI. Zrzuty ekranu pokazują prawdziwy interfejs aplikacji.
@@ -122,9 +125,9 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
     do IOD, bo wersja 1.0.3 nie ma w Ustawieniach kontrolki, która wysyłałaby żądanie usunięcia
     (`DELETE /api/public/devices/{token}`). Decyzja produktowa: wdrożyć w kolejnej wersji (osobny PR)
     i wtedy zaktualizować politykę oraz `deletionNote`.
-14. **Nadawca na zrzutach ćwiczebnych** — alerty ĆWICZENIE na zrzutach mają nadawcę „Rządowe Centrum
-    Bezpieczeństwa” (lokalna Brama sprzed ADR-0109). Przed wydaniem publicznym zrzuty z nadawcą
-    syntetycznym (np. „Powiat Demo (playground)”) razem z pozycją 8.
+14. **Nadawca na zrzutach ćwiczebnych** — rozstrzygnięte 2026-09-21 razem z pozycją 8: alerty
+    ĆWICZENIE na zrzutach mają nadawcę „Państwowa Straż Pożarna (ćwiczenie)”; wcześniejsze zrzuty
+    przypisywały je „Rządowemu Centrum Bezpieczeństwa” (lokalna Brama sprzed ADR-0109).
 
 ## Prawa
 

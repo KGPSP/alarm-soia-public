@@ -106,6 +106,7 @@ test("ASSETS-DIMS grafiki sklepowe mają wymagane wymiary i typ koloru odczytany
 
   assert.ok(report.googlePhoneScreenshots >= 4, `zrzutów telefonu Play: ${report.googlePhoneScreenshots}`);
   assert.ok(report.iphoneScreenshots >= 4, `zrzutów iPhone 6.9: ${report.iphoneScreenshots}`);
+  assert.ok(report.iphone65Screenshots >= 4, `zrzutów iPhone 6.5: ${report.iphone65Screenshots}`);
   assert.equal(report.tabletAssets, 0);
   assert.deepEqual(await pngHeader("assets/google-play/feature-graphic.png"), { width: 1024, height: 500, colorType: 2 });
   const icon = await pngHeader("assets/google-play/icon-512.png");
@@ -118,6 +119,7 @@ test("ASSETS-DIMS grafiki sklepowe mają wymagane wymiary i typ koloru odczytany
   for (const [path, header] of Object.entries(report.pngs)) {
     if (path.startsWith("assets/google-play/phone/")) assert.deepEqual(header, { width: 1080, height: 1920, colorType: 2 }, path);
     if (path.startsWith("assets/app-store/iphone-6.9/")) assert.deepEqual(header, { width: 1320, height: 2868, colorType: 2 }, path);
+    if (path.startsWith("assets/app-store/iphone-6.5/")) assert.deepEqual(header, { width: 1284, height: 2778, colorType: 2 }, path);
   }
   const mark = await readFile(join(root, "site", "assets/branding/alarm-soia-mark.svg"), "utf8");
   assert.match(mark, /^<svg /u);

@@ -78,6 +78,7 @@ const fixedPngRules = [
 const screenshotSets = [
   { id: "googlePhoneScreenshots", directory: "assets/google-play/phone/", width: 1080, height: 1920, minimum: 4, colorTypes: [2] },
   { id: "iphoneScreenshots", directory: "assets/app-store/iphone-6.9/", width: 1320, height: 2868, minimum: 4, colorTypes: [2] },
+  { id: "iphone65Screenshots", directory: "assets/app-store/iphone-6.5/", width: 1284, height: 2778, minimum: 4, colorTypes: [2] },
 ];
 
 // Słowa-klucze polityki prywatności wyprowadzane z pól rejestracji push.
