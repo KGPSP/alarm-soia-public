@@ -59,9 +59,8 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
    prywatności z tabeli wyżej. **DECYZJA: prawa do treści** (`contentRights`) — poradnik PDF
    MSWiA/MON/RCB dystrybuowany w aplikacji; oświadczenie o prawach osób trzecich dopiero po
    potwierdzeniu prawa do dystrybucji.
-2. **Ocena wieku** (`ageRating.questionnaire`): wszystkie odpowiedzi „Brak/Nie”, jedna
-   **DECYZJA**: „Informacje medyczne lub o leczeniu” — `None` (wynik 4+) albo `Infrequent`
-   (wynik 13+) ze względu na rozdział „Pierwsza pomoc” poradnika.
+2. **Ocena wieku** (`ageRating.questionnaire`): wszystkie odpowiedzi „Brak/Nie”, także
+   „Informacje medyczne lub o leczeniu” — `None` (rozstrzygnięte 2026-09-21); wynik 4+.
 3. **Prywatność aplikacji** (`appPrivacy`): zbiera dane: tak. *Identyfikatory → Identyfikator
    urządzenia* — cel „Funkcje aplikacji”, powiązane z użytkownikiem: tak (wariant „nie” wymaga
    opinii IOD), śledzenie: nie. *Inne dane → Inne typy danych* — jak wyżej (kody TERYT,
@@ -69,17 +68,18 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
    kontaktowe, treści użytkownika. Śledzenie: nie.
 4. **Ceny i dostępność**: bezpłatna, 27 państw UE z `countries`, wydanie ręczne
    (`releaseType: MANUAL`), bez wydania etapowego.
-5. **Zgodność z DSA (Digital Services Act)**: **DECYZJA: status tradera** (`dsa`) — bez tej
-   deklaracji Apple nie dystrybuuje aplikacji w UE. Jeśli „trader”: adres, e-mail i telefon KG PSP
-   będą widoczne publicznie na stronie produktu.
+5. **Zgodność z DSA (Digital Services Act)**: zadeklarować **non-trader** (`dsa.traderStatus:
+   NON_TRADER`, rozstrzygnięte 2026-09-21) — bez tej deklaracji Apple nie dystrybuuje aplikacji
+   w UE; przy non-trader dane kontaktowe nie są pokazywane na stronie produktu.
 6. **Wersja → Informacje o wersji** (pl-PL i en-GB): tekst promocyjny `promotionalText` (≤170),
    opis `description` (≤4000), słowa kluczowe `keywords` (≤100 bajtów), adres wsparcia
    i marketingu z tabeli wyżej, informacje o wydaniu `releaseNotes`, copyright `copyright`.
    Zrzuty iPhone 6,9" `site/assets/app-store/iphone-6.9/01–06.png` (1320×2868); slot 6,5"
    nie przyjmuje tego wymiaru — dla niego gotowy zestaw `site/assets/app-store/iphone-6.5/01–06.png`
-   (1284×2778, ta sama kompozycja). Tylko iPhone (`deviceFamilies`). Stan konsoli 2026-09-21:
-   w wersji 1.0.4 slot 6,5" ma jeszcze sześć zrzutów z paskiem APLIKACJA TESTOWA — przed wysłaniem
-   do recenzji podmienić na zestaw z repozytorium (bez paska).
+   (1284×2778, ta sama kompozycja). Tylko iPhone (`deviceFamilies`). Stan konsoli 2026-09-21
+   wieczorem: zrzuty z paskiem APLIKACJA TESTOWA usunięte, **slot 6,5" jest pusty** — wgrać zestaw
+   z repozytorium po kolei 01→06; na tej samej stronie zmienić wersję 1.0.4 → 1.0.5 i wybrać
+   build 11 (TestFlight, dostarczony 2026-09-21).
 7. **Informacje do recenzji** (`reviewNotes`): logowanie niewymagane; ścieżka testu przez kreator
    pierwszego uruchomienia; okno czasowe na ostrzeżenie testowe ĆWICZENIE dla wskazanego powiatu
    albo nagranie przepływu; Critical Alerts (entitlement zatwierdzony, wniosek `MPJHKAS7D9`) tylko
@@ -91,8 +91,8 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
 
 | # | Decyzja | Gdzie | Pole w `data/` |
 |---|---|---|---|
-| 1 | Status tradera DSA | App Store Connect | `dsa.traderStatus` |
-| 2 | Ocena wieku 4+ / 13+ | App Store Connect | `ageRating.questionnaire.medicalOrTreatmentInformation` |
+| 1 | ~~Status tradera DSA~~ — **rozstrzygnięte 2026-09-21: non-trader** | App Store Connect | `dsa.traderStatus: NON_TRADER` |
+| 2 | ~~Ocena wieku~~ — **rozstrzygnięte 2026-09-21: `None`, wynik 4+** | App Store Connect | `ageRating.questionnaire.medicalOrTreatmentInformation: None` |
 | 3 | Publiczny telefon KG PSP | Play Console | `developerProfile.phone` |
 | 4 | Akceptacja polityki prywatności przez IOD (data, podstawa prawna, okres porządkowania) | strona + obie konsole | `status` we wszystkich plikach `data/` |
 | 5 | Pismo „Government apps” (równolegle) | Play Console | `governmentAppProof` |

@@ -87,11 +87,11 @@ samego dnia (deployment usunięty).
 Elementy oznaczone w danych jako `DO_DECYZJI` / „projekt” wymagają decyzji KG PSP (służby prawne,
 IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
 
-1. **Status tradera DSA (Apple)** — `data/app-store-declarations.json` → `dsa.traderStatus`;
-   bezpłatna usługa publiczna ma przesłanki „non-trader”, ale definicja DSA obejmuje osoby prawne
-   „publicly owned”; opinia służb prawnych KG PSP/IOD.
-2. **Age Rating 4+ vs 13+ (Apple)** — rozdział „Pierwsza pomoc” poradnika PDF może oznaczać
-   „Medical or Treatment Information: Infrequent” (13+); `ageRating.proposed` = 4+.
+1. **Status tradera DSA (Apple)** — rozstrzygnięte 2026-09-21 (decyzja przekazana przez właściciela
+   produktu): **non-trader** — bezpłatna, ustawowa usługa publiczna bez przychodu i reklam;
+   `data/app-store-declarations.json` → `dsa.traderStatus: NON_TRADER`.
+2. **Age Rating (Apple)** — rozstrzygnięte 2026-09-21: „Informacje medyczne lub o leczeniu” = brak
+   (`None`), wynik **4+**; poradnik traktowany jako ogólna informacja o bezpieczeństwie.
 3. **Content Rights poradnika PDF (Apple)** — „Poradnik bezpieczeństwa” MSWiA, MON i RCB (2025):
    potwierdzić prawo do dystrybucji w aplikacji przed oświadczeniem o prawach do treści osób trzecich.
 4. **Publiczny telefon KG PSP w profilu dewelopera Google Play** — pole wymagane i publiczne dla

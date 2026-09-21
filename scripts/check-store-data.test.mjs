@@ -125,7 +125,9 @@ test("STORE-DECL Apple: 27 kodów UE, tylko IPHONE, dataCollected, Device ID + O
   assert.equal(declarations.ageRating.proposed, "4+");
   assert.match(declarations.ageRating.alternative, /13\+/u);
   assert.equal(declarations.ageRating.decision, "KG PSP");
-  assert.equal(declarations.dsa.traderStatus, "DO_DECYZJI");
+  assert.equal(declarations.dsa.traderStatus, "NON_TRADER");
+  assert.equal(declarations.ageRating.questionnaire.medicalOrTreatmentInformation, "None");
+  assert.equal(declarations.ageRating.decided, "4+");
   assert.equal(declarations.usesNonExemptEncryption, false);
   assert.equal(declarations.criticalAlertsRequest, "MPJHKAS7D9");
   assert.equal(declarations.releaseType, "MANUAL");

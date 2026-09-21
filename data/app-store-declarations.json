@@ -37,6 +37,8 @@
     "proposed": "4+",
     "alternative": "13+ jeśli rozdział „Pierwsza pomoc” poradnika PDF = Medical or Treatment Information: Infrequent",
     "decision": "KG PSP",
+    "decided": "4+",
+    "decidedOn": "2026-09-21",
     "questionnaire": {
       "parentalControlsOrAgeAssurance": "None",
       "unrestrictedWebAccess": false,
@@ -52,7 +54,7 @@
       "gambling": "None",
       "contests": "None",
       "healthOrWellnessTopics": "None",
-      "medicalOrTreatmentInformation": "DO_DECYZJI — None (4+) albo Infrequent (13+)"
+      "medicalOrTreatmentInformation": "None"
     }
   },
   "contentRights": {
@@ -60,7 +62,8 @@
     "note": "„Poradnik bezpieczeństwa” MSWiA, MON i RCB (2025) dystrybuowany w aplikacji — potwierdzić prawo do dystrybucji przed oświadczeniem o prawach do treści osób trzecich"
   },
   "dsa": {
-    "traderStatus": "DO_DECYZJI",
+    "traderStatus": "NON_TRADER",
+    "decidedOn": "2026-09-21",
     "note": "Bezpłatna, ustawowa usługa publiczna bez przychodu i reklam — przesłanki non-trader, ale definicja DSA obejmuje osoby prawne „publicly owned”; decyzja służb prawnych KG PSP/IOD. Jeśli trader: adres ul. Podchorążych 38, 00-463 Warszawa, e-mail informacje@kg.straz.gov.pl, telefon KG PSP — publicznie na stronie produktu."
   },
   "usesNonExemptEncryption": false,
