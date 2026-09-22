@@ -79,9 +79,11 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
    nie przyjmuje tego wymiaru — dla niego gotowy zestaw `site/assets/app-store/iphone-6.5/01–06.png`
    (1284×2778, ta sama kompozycja). Tylko iPhone (`deviceFamilies`). Stan konsoli 2026-09-21
    wieczorem: **strona wersji gotowa** — wersja 1.0.5, build 11, sześć zrzutów 6,5" bez paska
-   w kolejności 01→06, dane kontaktowe do recenzji wpisane, wydanie ręczne. Do zrobienia zostają
-   pozostałe sekcje: Informacje o aplikacji (podtytuł, kategorie), ocena wieku, prywatność
-   aplikacji, ceny i dostępność, deklaracja DSA — wartości niżej i w `data/`.
+   w kolejności 01→06, dane kontaktowe do recenzji wpisane, wydanie ręczne. 2026-09-22 rano:
+   **Informacje o aplikacji zapisane** (podtytuł „Oficjalne ostrzeżenia KG PSP”, kategorie
+   Utilities + Weather) i **ocena wieku zapisana** (wszystkie odpowiedzi None/No, wynik 4+,
+   172 kraje). Do zrobienia zostają: prywatność aplikacji („Set Up” dwóch typów danych + Publish),
+   ceny i dostępność (bezpłatna, 27 państw UE), deklaracja DSA (non-trader), „Add for Review”.
 7. **Informacje do recenzji** (`reviewNotes`): logowanie niewymagane; ścieżka testu przez kreator
    pierwszego uruchomienia; okno czasowe na ostrzeżenie testowe ĆWICZENIE dla wskazanego powiatu
    albo nagranie przepływu; Critical Alerts (entitlement zatwierdzony, wniosek `MPJHKAS7D9`) tylko
