@@ -82,8 +82,12 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
    w kolejności 01→06, dane kontaktowe do recenzji wpisane, wydanie ręczne. 2026-09-22 rano:
    **Informacje o aplikacji zapisane** (podtytuł „Oficjalne ostrzeżenia KG PSP”, kategorie
    Utilities + Weather) i **ocena wieku zapisana** (wszystkie odpowiedzi None/No, wynik 4+,
-   172 kraje). Do zrobienia zostają: prywatność aplikacji („Set Up” dwóch typów danych + Publish),
-   ceny i dostępność (bezpłatna, 27 państw UE), deklaracja DSA (non-trader), „Add for Review”.
+   172 kraje). 2026-09-22 rano, ciąg dalszy: **prywatność aplikacji opublikowana** (Device ID
+   i Other Data: App Functionality, powiązane z użytkownikiem, bez śledzenia), **ceny i dostępność
+   zapisane** (kraj bazowy Polska, 0 zł, dokładnie 27 państw UE dostępnych / 148 niedostępnych;
+   dystrybucja na Macach Apple Silicon i Apple Vision Pro wyłączona — aplikacja tylko na iPhone).
+   Do zrobienia zostają: deklaracja DSA (non-trader; sekcja Business → Agreements, poziom konta)
+   i „Add for Review” na stronie wersji.
 7. **Informacje do recenzji** (`reviewNotes`): logowanie niewymagane; ścieżka testu przez kreator
    pierwszego uruchomienia; okno czasowe na ostrzeżenie testowe ĆWICZENIE dla wskazanego powiatu
    albo nagranie przepływu; Critical Alerts (entitlement zatwierdzony, wniosek `MPJHKAS7D9`) tylko
