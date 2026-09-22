@@ -17,6 +17,16 @@ Adresy publiczne (strona na GitHub Pages, zweryfikowane 2026-09-16):
 
 ## A. Google Play Console (`data/google-play.json`, `data/google-play-declarations.json`)
 
+**Stan 2026-09-22 (rano):** wszystko poniżej WPISANE i **10 zmian wysłanych do sprawdzenia**
+(wersja produkcyjna 5 (1.0.5) z pełnym wdrożeniem, 27 państw UE, wpis pl-PL z ikoną, grafiką
+promocyjną i 5 zrzutami, kategoria Narzędzia, dane kontaktowe z telefonem, polityka, dane
+logowania, reklamy, IARC, odbiorcy 18+, aplikacja instytucji państwowej, finanse, zdrowie,
+Bezpieczeństwo danych, identyfikator reklamowy). Weryfikacja Google: zwykle do 7 dni.
+Nie wgrano: tłumaczenia en-GB wpisu (opcjonalne — do dodania po zatwierdzeniu) i zrzutów
+tabletów (konsola oznacza je gwiazdką, ale zapis i wysyłka przeszły bez nich). Otwarte:
+pismo „Government apps” (formularz Google, poza konsolą) i weryfikacja dewelopera aplikacji
+na Androida (baner na stronie głównej konta).
+
 Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejność jak w konsoli.
 
 1. **Wpis w sklepie → Główny wpis** (język domyślny pl-PL, tłumaczenie en-GB): nazwa `appName`,
