@@ -99,7 +99,10 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
    +48 47 722 31 12 (Biuro Informatyki i Łączności KG PSP); `data/google-play-declarations.json` →
    `developerProfile.phone`.
 5. **Pismo do deklaracji „Government apps” (Google Play)** — dokument KG PSP na papierze firmowym
-   z danymi kontaktowymi do weryfikacji; konto organizacji w domenie `kg.straz.gov.pl`.
+   z danymi kontaktowymi do weryfikacji; konto organizacji w domenie `kg.straz.gov.pl`. Projekt
+   pisma (PL+EN) przygotowany 2026-09-22 poza repozytorium — czeka na podpis i wysłanie przez
+   Play Console → Pomoc; nie blokuje trwającej recenzji (deklaracja „aplikacja instytucji
+   państwowej” jest już zaznaczona w konsoli).
 6. **Hosting** — rozstrzygnięte 2026-09-16: GitHub Pages pod `https://kgpsp.github.io/alarm-soia-public/`
    (decyzja Michała; pierwsze wdrożenie na EAS Hosting `alarm-soia.expo.app` z tego samego dnia
    wycofane, deployment usunięty, `app.json` usunięty z repo). Adres polityki w aplikacji i w konsolach
@@ -133,6 +136,12 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
 14. **Nadawca na zrzutach ćwiczebnych** — rozstrzygnięte 2026-09-21 razem z pozycją 8: alerty
     ĆWICZENIE na zrzutach mają nadawcę „Państwowa Straż Pożarna (ćwiczenie)”; wcześniejsze zrzuty
     przypisywały je „Rządowemu Centrum Bezpieczeństwa” (lokalna Brama sprzed ADR-0109).
+15. **Deklaracja dostępności** — opublikowana 2026-09-22 na `site/dostepnosc.html` (ustawa
+    z 4 kwietnia 2019 r. o dostępności cyfrowej): status „częściowo zgodna”, metoda samooceny,
+    treści niedostępne (poradnik PDF osób trzecich, mapa kartograficzna, niedokończona weryfikacja
+    z czytnikiem ekranu), informacje zwrotne i procedura skargowa. Daty sporządzenia i przeglądu
+    oraz status do potwierdzenia przez koordynatora dostępności KG PSP; następny przegląd
+    najpóźniej do 31 marca 2027 r.
 
 ## Prawa
 

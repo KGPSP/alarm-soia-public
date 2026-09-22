@@ -22,10 +22,16 @@ Adresy publiczne (strona na GitHub Pages, zweryfikowane 2026-09-16):
 promocyjną i 5 zrzutami, kategoria Narzędzia, dane kontaktowe z telefonem, polityka, dane
 logowania, reklamy, IARC, odbiorcy 18+, aplikacja instytucji państwowej, finanse, zdrowie,
 Bezpieczeństwo danych, identyfikator reklamowy). Weryfikacja Google: zwykle do 7 dni.
-Nie wgrano: tłumaczenia en-GB wpisu (opcjonalne — do dodania po zatwierdzeniu) i zrzutów
-tabletów (konsola oznacza je gwiazdką, ale zapis i wysyłka przeszły bez nich). Otwarte:
-pismo „Government apps” (formularz Google, poza konsolą) i weryfikacja dewelopera aplikacji
-na Androida (baner na stronie głównej konta).
+**2026-09-22, ciąg dalszy:** tłumaczenie **en-GB wpisu zapisane w konsoli** (nazwa, krótki
+i pełny opis z `data/google-play.json`; grafiki wspólne z pl-PL) — czeka jako **1 zmiana
+niewysłana**. Konsola ostrzega, że wysłanie jej w trakcie trwającego sprawdzania **anuluje bieżącą
+recenzję i zaczyna ją od nowa** — dlatego en-GB wysłać dopiero po zakończeniu sprawdzania
+10 zmian. Nie wgrano zrzutów tabletów (konsola oznacza je gwiazdką, ale zapis i wysyłka
+przeszły bez nich). **Weryfikacja dewelopera** (baner konta, termin Google 30.09.2026):
+spełniona — pakiet `info.soia.alarm` „Zarejestrowano”, tożsamość organizacji potwierdzona.
+Otwarte: pismo „Government apps” — projekt PL+EN gotowy poza repozytorium (zawiera dane
+kontaktowe BIL, których walidator strony nie dopuszcza), do podpisu i wysłania przez
+Play Console → Pomoc.
 
 Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejność jak w konsoli.
 
