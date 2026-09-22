@@ -92,8 +92,9 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
    `data/app-store-declarations.json` → `dsa.traderStatus: NON_TRADER`.
 2. **Age Rating (Apple)** — rozstrzygnięte 2026-09-21: „Informacje medyczne lub o leczeniu” = brak
    (`None`), wynik **4+**; poradnik traktowany jako ogólna informacja o bezpieczeństwie.
-3. **Content Rights poradnika PDF (Apple)** — „Poradnik bezpieczeństwa” MSWiA, MON i RCB (2025):
-   potwierdzić prawo do dystrybucji w aplikacji przed oświadczeniem o prawach do treści osób trzecich.
+3. **Content Rights poradnika PDF (Apple)** — rozstrzygnięte 2026-09-22: zadeklarowano „zawiera
+   treści osób trzecich i mamy niezbędne prawa” („Poradnik bezpieczeństwa” MSWiA, MON i RCB 2025
+   oraz komunikaty PL-CAP); wersja 1.0.5 wysłana do recenzji App Store tego samego dnia.
 4. **Publiczny telefon KG PSP w profilu dewelopera Google Play** — rozstrzygnięte 2026-09-21:
    +48 47 722 31 12 (Biuro Informatyki i Łączności KG PSP); `data/google-play-declarations.json` →
    `developerProfile.phone`.

@@ -86,8 +86,10 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
    i Other Data: App Functionality, powiązane z użytkownikiem, bez śledzenia), **ceny i dostępność
    zapisane** (kraj bazowy Polska, 0 zł, dokładnie 27 państw UE dostępnych / 148 niedostępnych;
    dystrybucja na Macach Apple Silicon i Apple Vision Pro wyłączona — aplikacja tylko na iPhone).
-   Do zrobienia zostają: deklaracja DSA (non-trader; sekcja Business → Agreements, poziom konta)
-   i „Add for Review” na stronie wersji.
+   DSA: konto miało już deklarację **non-trader** (Active od 10.09.2026) — bez zmian. Content
+   Rights: „zawiera treści osób trzecich, mam prawa” (decyzja 2026-09-22). **2026-09-22 07:13
+   (czas lokalny konsoli): wersja 1.0.5 WYSŁANA DO RECENZJI — „Waiting for Review”**, wydanie
+   ręczne po zatwierdzeniu.
 7. **Informacje do recenzji** (`reviewNotes`): logowanie niewymagane; ścieżka testu przez kreator
    pierwszego uruchomienia; okno czasowe na ostrzeżenie testowe ĆWICZENIE dla wskazanego powiatu
    albo nagranie przepływu; Critical Alerts (entitlement zatwierdzony, wniosek `MPJHKAS7D9`) tylko
@@ -104,7 +106,7 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
 | 3 | ~~Publiczny telefon KG PSP~~ — **rozstrzygnięte 2026-09-21: +48 47 722 31 12** | Play Console | `developerProfile.phone` |
 | 4 | ~~Akceptacja polityki prywatności przez IOD~~ — **rozstrzygnięte 2026-09-21** (obowiązuje od 21.09.2026, art. 6 ust. 1 lit. e RODO, standardowe klauzule umowne) | strona + obie konsole | polityka na stronie; `status` w `data/` zmienia się przy wysyłce |
 | 5 | Pismo „Government apps” (równolegle) | Play Console | `governmentAppProof` |
-| 6 | Prawa do poradnika PDF (równolegle) | App Store Connect | `contentRights` |
+| 6 | ~~Prawa do poradnika PDF~~ — **rozstrzygnięte 2026-09-22: treści osób trzecich z prawami** | App Store Connect | `contentRights.status` |
 
 Po rozstrzygnięciu: wpisać wartości do `data/`, zmienić `status` na zatwierdzony, `npm test`,
 commit — dopiero potem przepisać do konsol.

@@ -58,7 +58,8 @@
     }
   },
   "contentRights": {
-    "status": "DO_DECYZJI",
+    "status": "THIRD_PARTY_CONTENT_WITH_RIGHTS",
+    "decidedOn": "2026-09-22",
     "note": "„Poradnik bezpieczeństwa” MSWiA, MON i RCB (2025) dystrybuowany w aplikacji — potwierdzić prawo do dystrybucji przed oświadczeniem o prawach do treści osób trzecich"
   },
   "dsa": {
