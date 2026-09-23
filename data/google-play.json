@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "DRAFT_NOT_SUBMITTED",
+  "status": "SUBMITTED_FOR_REVIEW",
   "defaultLocale": "pl-PL",
   "locales": ["pl-PL", "en-GB"],
   "appName": {
