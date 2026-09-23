@@ -13,6 +13,13 @@ export const LOCALES = ["pl-PL", "en-GB"];
 export const APPLE_CHARACTER_LIMITS = { name: 30, subtitle: 30, promotionalText: 170, description: 4000, releaseNotes: 4000 };
 export const APPLE_BYTE_LIMITS = { keywords: 100 };
 export const PLAY_CHARACTER_LIMITS = { appName: 30, shortDescription: 80, fullDescription: 4000, releaseNotes: 500 };
+// Cykl życia pakietu: projekt → wysłany do przeglądu sklepu → wydany (dostępny dla użytkowników).
+export const STORE_STATUSES = ["DRAFT_NOT_SUBMITTED", "SUBMITTED_FOR_REVIEW", "RELEASED"];
+// Adresy sklepów w data/site.json: null do chwili wydania, potem wyłącznie strona produktu tej aplikacji.
+export const STORE_URL_PATTERNS = {
+  appStore: /^https:\/\/apps\.apple\.com\/(?:[a-z]{2}\/)?app\/(?:[a-z0-9-]+\/)?id6805916290$/u,
+  googlePlay: /^https:\/\/play\.google\.com\/store\/apps\/details\?id=info\.soia\.alarm$/u,
+};
 
 // Nazwy innych podmiotów i nazwa własna aplikacji — zakazane w słowach kluczowych (Apple 2.3.7).
 const forbiddenKeywordTerms = [/\bRCB\b/iu, /\bApple\b/iu, /\bGoogle\b/iu, /\bair\s*alert\b/iu, /\bsoia\b/iu, /\bIMGW\b/iu];
@@ -97,7 +104,20 @@ export async function checkStoreData(repositoryRoot) {
     ["google-play-declarations.json", googlePlayDeclarations],
   ]) {
     if (document.schemaVersion !== 1) throw new Error(`${name}: schemaVersion musi być 1`);
-    if (document.status !== "DRAFT_NOT_SUBMITTED") throw new Error(`${name}: status musi być DRAFT_NOT_SUBMITTED do czasu wysyłki`);
+    if (!STORE_STATUSES.includes(document.status)) throw new Error(`${name}: status musi być jednym z ${STORE_STATUSES.join(", ")}`);
+  }
+  // Wpis i deklaracje jednego sklepu idą przez cykl życia razem.
+  if (appStore.status !== appStoreDeclarations.status) throw new Error("app-store.json i app-store-declarations.json muszą mieć ten sam status");
+  if (googlePlay.status !== googlePlayDeclarations.status) throw new Error("google-play.json i google-play-declarations.json muszą mieć ten sam status");
+  // Adres sklepu pojawia się dopiero przy statusie RELEASED — i tylko wtedy.
+  for (const [key, status] of [["appStore", appStore.status], ["googlePlay", googlePlay.status]]) {
+    const url = site.storeUrls?.[key];
+    if (url === undefined) throw new Error(`data/site.json: brak storeUrls.${key}`);
+    if (status === "RELEASED") {
+      if (typeof url !== "string" || !STORE_URL_PATTERNS[key].test(url)) throw new Error(`data/site.json: storeUrls.${key} musi być stroną produktu tej aplikacji przy statusie RELEASED`);
+    } else if (url !== null) {
+      throw new Error(`data/site.json: storeUrls.${key} musi być null, dopóki sklep nie wyda aplikacji (status ${status})`);
+    }
   }
 
   // App Store — limity per lokalizacja

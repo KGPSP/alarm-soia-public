@@ -105,7 +105,9 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
    DSA: konto miało już deklarację **non-trader** (Active od 10.09.2026) — bez zmian. Content
    Rights: „zawiera treści osób trzecich, mam prawa” (decyzja 2026-09-22). **2026-09-22 07:13
    (czas lokalny konsoli): wersja 1.0.5 WYSŁANA DO RECENZJI — „Waiting for Review”**, wydanie
-   ręczne po zatwierdzeniu.
+   ręczne po zatwierdzeniu. **2026-09-23 ~15:15: zatwierdzona („Pending Developer Release”,
+   recenzja ~31 h) i WYDANA na polecenie właściciela produktu — „Ready for Distribution”**,
+   27 państw UE; strona produktu `https://apps.apple.com/pl/app/alarm-soia/id6805916290` (żywa od ~16:45).
 7. **Informacje do recenzji** (`reviewNotes`): logowanie niewymagane; ścieżka testu przez kreator
    pierwszego uruchomienia; okno czasowe na ostrzeżenie testowe ĆWICZENIE dla wskazanego powiatu
    albo nagranie przepływu; Critical Alerts (entitlement zatwierdzony, wniosek `MPJHKAS7D9`) tylko
