@@ -17,7 +17,7 @@ export const PLAY_CHARACTER_LIMITS = { appName: 30, shortDescription: 80, fullDe
 export const STORE_STATUSES = ["DRAFT_NOT_SUBMITTED", "SUBMITTED_FOR_REVIEW", "RELEASED"];
 // Adresy sklepów w data/site.json: null do chwili wydania, potem wyłącznie strona produktu tej aplikacji.
 export const STORE_URL_PATTERNS = {
-  appStore: /^https:\/\/apps\.apple\.com\/(?:[a-z]{2}\/)?app\/id6805916290$/u,
+  appStore: /^https:\/\/apps\.apple\.com\/(?:[a-z]{2}\/)?app\/(?:[a-z0-9-]+\/)?id6805916290$/u,
   googlePlay: /^https:\/\/play\.google\.com\/store\/apps\/details\?id=info\.soia\.alarm$/u,
 };
 

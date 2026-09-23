@@ -192,7 +192,7 @@ test("STORE-DECL deklaracje są spójne z data/dane-przekazywane.json: token pus
 test("STORE-STATUS cykl życia: App Store RELEASED z adresem produktu, Play SUBMITTED_FOR_REVIEW bez adresu; status obcy, rozjazd wpis↔deklaracje i adres przed wydaniem odrzucane", async () => {
   assert.equal((await data("app-store.json")).status, "RELEASED");
   assert.equal((await data("google-play.json")).status, "SUBMITTED_FOR_REVIEW");
-  assert.match(site.storeUrls.appStore, /^https:\/\/apps\.apple\.com\/app\/id6805916290$/u);
+  assert.equal(site.storeUrls.appStore, "https://apps.apple.com/pl/app/alarm-soia/id6805916290");
   assert.equal(site.storeUrls.googlePlay, null);
   await rejectsAfter((edit) => edit("google-play.json", (document) => { document.status = "PUBLISHED"; }), /status musi być jednym z/u);
   await rejectsAfter((edit) => edit("app-store-declarations.json", (document) => { document.status = "SUBMITTED_FOR_REVIEW"; }), /ten sam status/u);

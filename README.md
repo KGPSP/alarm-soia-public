@@ -127,7 +127,7 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
     ją Play Console; skrypt kontrolny dopuszcza też wariant 24-bitowy, gdyby konsola zażądała pliku
     bez przezroczystości.
 12. **Adres sklepów** — App Store: wydanie 1.0.5 opublikowane 2026-09-23 (`storeUrls.appStore`
-    = `https://apps.apple.com/app/id6805916290`, przycisk „Pobierz z App Store” na stronie głównej,
+    = `https://apps.apple.com/pl/app/alarm-soia/id6805916290`, przycisk „Pobierz z App Store” na stronie głównej,
     status `RELEASED` w `data/app-store*.json`). Google Play: po publikacji wpisać
     `storeUrls.googlePlay` (`https://play.google.com/store/apps/details?id=info.soia.alarm`),
     podnieść status `SUBMITTED_FOR_REVIEW` → `RELEASED` i dodać drugi przycisk; walidator
