@@ -132,7 +132,7 @@ test("STORE-DECL Apple: 27 kodów UE, tylko IPHONE, dataCollected, Device ID + O
   assert.equal(declarations.criticalAlertsRequest, "MPJHKAS7D9");
   assert.equal(declarations.releaseType, "MANUAL");
   assert.equal(declarations.price, "FREE");
-  assert.equal(declarations.status, "RELEASED");
+  assert.equal(declarations.status, "WITHDRAWN");
   await rejectsAfter((edit) => edit("app-store-declarations.json", (document) => { document.countries = document.countries.filter((code) => code !== "PL"); }), /27 państw/u);
   await rejectsAfter((edit) => edit("app-store-declarations.json", (document) => { document.appPrivacy[0].usedForTracking = true; }), /śledzenia/u);
 });
@@ -189,14 +189,21 @@ test("STORE-DECL deklaracje są spójne z data/dane-przekazywane.json: token pus
   await rejectsAfter((edit) => edit("google-play-declarations.json", (document) => { document.dataSafety.collected.push({ type: "Location/Approximate location", required: false, shared: false, ephemeral: false, purposes: ["App functionality"] }); }), /Location/u);
 });
 
-test("STORE-STATUS cykl życia: App Store RELEASED z adresem produktu, Play SUBMITTED_FOR_REVIEW bez adresu; status obcy, rozjazd wpis↔deklaracje i adres przed wydaniem odrzucane", async () => {
-  assert.equal((await data("app-store.json")).status, "RELEASED");
-  assert.equal((await data("google-play.json")).status, "SUBMITTED_FOR_REVIEW");
-  assert.equal(site.storeUrls.appStore, "https://apps.apple.com/pl/app/alarm-soia/id6805916290");
+test("STORE-STATUS cykl życia: oba sklepy WITHDRAWN bez adresów; RELEASED wymaga adresu produktu; status obcy, rozjazd wpis↔deklaracje i adres poza RELEASED odrzucane", async () => {
+  assert.equal((await data("app-store.json")).status, "WITHDRAWN");
+  assert.equal((await data("google-play.json")).status, "WITHDRAWN");
+  assert.equal(site.storeUrls.appStore, null);
   assert.equal(site.storeUrls.googlePlay, null);
   await rejectsAfter((edit) => edit("google-play.json", (document) => { document.status = "PUBLISHED"; }), /status musi być jednym z/u);
   await rejectsAfter((edit) => edit("app-store-declarations.json", (document) => { document.status = "SUBMITTED_FOR_REVIEW"; }), /ten sam status/u);
-  await rejectsAfter((edit) => edit("site.json", (document) => { document.storeUrls.googlePlay = "https://play.google.com/store/apps/details?id=info.soia.alarm"; }), /musi być null/u);
-  await rejectsAfter((edit) => edit("site.json", (document) => { document.storeUrls.appStore = "https://apps.apple.com/app/id123"; }), /stroną produktu/u);
-  await rejectsAfter((edit) => edit("site.json", (document) => { document.storeUrls.appStore = null; }), /stroną produktu/u);
+  await rejectsAfter((edit) => edit("site.json", (document) => { document.storeUrls.appStore = "https://apps.apple.com/pl/app/alarm-soia/id6805916290"; }), /musi być null/u);
+  await rejectsAfter(async (edit) => {
+    await edit("app-store.json", (document) => { document.status = "RELEASED"; });
+    await edit("app-store-declarations.json", (document) => { document.status = "RELEASED"; });
+  }, /stroną produktu/u);
+  await rejectsAfter(async (edit) => {
+    await edit("app-store.json", (document) => { document.status = "RELEASED"; });
+    await edit("app-store-declarations.json", (document) => { document.status = "RELEASED"; });
+    await edit("site.json", (document) => { document.storeUrls.appStore = "https://apps.apple.com/app/id123"; });
+  }, /stroną produktu/u);
 });

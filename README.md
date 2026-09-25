@@ -126,12 +126,14 @@ IOD, Biuro Ochrony Ludności) przed wpisaniem do konsol sklepów:
 11. **Ikona 512** — `icon-512.png` jest 32-bitowym PNG z kanałem alfa (typ koloru 6), tak jak opisuje
     ją Play Console; skrypt kontrolny dopuszcza też wariant 24-bitowy, gdyby konsola zażądała pliku
     bez przezroczystości.
-12. **Adres sklepów** — App Store: wydanie 1.0.5 opublikowane 2026-09-23 (`storeUrls.appStore`
-    = `https://apps.apple.com/pl/app/alarm-soia/id6805916290`, przycisk „Pobierz z App Store” na stronie głównej,
-    status `RELEASED` w `data/app-store*.json`). Google Play: po publikacji wpisać
-    `storeUrls.googlePlay` (`https://play.google.com/store/apps/details?id=info.soia.alarm`),
-    podnieść status `SUBMITTED_FOR_REVIEW` → `RELEASED` i dodać drugi przycisk; walidator
-    (`check-store-data`) wymaga adresu dokładnie przy statusie `RELEASED` i `null` wcześniej.
+12. **Adres sklepów** — App Store: wydanie 1.0.5 opublikowane 2026-09-23, **wycofane ze sprzedaży
+    2026-09-25 decyzją wydawcy** (Pricing and Availability → 0 krajów; odwracalne przez „Manage
+    Availability”). Google Play: wersja produkcyjna w przeglądzie od 2026-09-22, **2026-09-25 dostępność
+    ustawiona na „Wycofane”** (Ustawienia zaawansowane → Dostępność aplikacji) — po zatwierdzeniu
+    aplikacja nie pojawi się w sklepie. Statusy w `data/`: oba `WITHDRAWN`, `storeUrls` = `null`;
+    walidator (`check-store-data`) wymaga adresu produktu dokładnie przy statusie `RELEASED`
+    i `null` przy każdym innym. Ponowne udostępnienie: przywrócić kraje w ASC i „Opublikowane”
+    w Play, ustawić `RELEASED` + adresy, dodać przyciski pobierania na stronie głównej.
 
 13. **Cofnięcie zgody w aplikacji** — polityka i Data safety opisują usunięcie rejestracji na wniosek
     do IOD, bo wersja 1.0.3 nie ma w Ustawieniach kontrolki, która wysyłałaby żądanie usunięcia
