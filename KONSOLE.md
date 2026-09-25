@@ -22,6 +22,11 @@ Adresy publiczne (strona na GitHub Pages, zweryfikowane 2026-09-16):
 promocyjną i 5 zrzutami, kategoria Narzędzia, dane kontaktowe z telefonem, polityka, dane
 logowania, reklamy, IARC, odbiorcy 18+, aplikacja instytucji państwowej, finanse, zdrowie,
 Bezpieczeństwo danych, identyfikator reklamowy). Weryfikacja Google: zwykle do 7 dni.
+**2026-09-25 ~10:20: DOSTĘPNOŚĆ APLIKACJI = „WYCOFANE”** (Testuj i publikuj → Ustawienia
+zaawansowane → Dostępność aplikacji → Wycofane → Cofnij publikację; „Zmiana została zapisana”, bez
+recenzji) — na polecenie właściciela produktu. Przegląd 10 zmian biegnie dalej, ale po zatwierdzeniu
+aplikacja nie będzie widoczna; testerzy wewnętrzni zachowują dostęp. Powrót: ta sama strona →
+„Opublikowane”.
 **2026-09-22, ciąg dalszy:** tłumaczenie **en-GB wpisu zapisane w konsoli** (nazwa, krótki
 i pełny opis z `data/google-play.json`; grafiki wspólne z pl-PL) — czeka jako **1 zmiana
 niewysłana**. Konsola ostrzega, że wysłanie jej w trakcie trwającego sprawdzania **anuluje bieżącą
@@ -108,6 +113,9 @@ Wpis aplikacji ALARM.SOIA już istnieje (ścieżka wewnętrzna od 1.0.3). Kolejn
    ręczne po zatwierdzeniu. **2026-09-23 ~15:15: zatwierdzona („Pending Developer Release”,
    recenzja ~31 h) i WYDANA na polecenie właściciela produktu — „Ready for Distribution”**,
    27 państw UE; strona produktu `https://apps.apple.com/pl/app/alarm-soia/id6805916290` (żywa od ~16:45).
+   **2026-09-25 ~10:30: WYCOFANA ZE SPRZEDAŻY na polecenie właściciela produktu** — Pricing and
+   Availability → Manage Availability → Select None → Confirm; „Availability (0 Countries or Regions)”,
+   27 krajów „Processing to Not Available” (do 24 h). Odwracalne tą samą ścieżką (Select All → 27 UE).
 7. **Informacje do recenzji** (`reviewNotes`): logowanie niewymagane; ścieżka testu przez kreator
    pierwszego uruchomienia; okno czasowe na ostrzeżenie testowe ĆWICZENIE dla wskazanego powiatu
    albo nagranie przepływu; Critical Alerts (entitlement zatwierdzony, wniosek `MPJHKAS7D9`) tylko
