@@ -75,14 +75,15 @@ test("SITE-CHECK kończy się bez naruszeń: zero zewnętrznych zasobów runtime
   }
 });
 
-test("SITE-CHECK trzyma e-maile na właściwych stronach: informacje@ na pomocy, iod@ tylko w polityce i na stronie Dane i prywatność", async () => {
+test("SITE-CHECK trzyma e-maile na właściwych stronach: pomoc@ na pomocy, iod@ tylko w polityce i na stronie Dane i prywatność", async () => {
   const support = await page("pomoc.html");
   const privacy = await page("polityka-prywatnosci.html");
   const summary = await page("dane-i-prywatnosc.html");
   const home = await page("index.html");
   const security = await page("bezpieczenstwo.html");
 
-  assert.match(support, /mailto:informacje@kg\.straz\.gov\.pl/u);
+  assert.match(support, /mailto:pomoc@kg\.straz\.gov\.pl/u);
+  assert.doesNotMatch(support, /informacje@kg\.straz\.gov\.pl/u);
   assert.doesNotMatch(support, /iod@kg\.straz\.gov\.pl/u);
   assert.doesNotMatch(home, /iod@kg\.straz\.gov\.pl/u);
   assert.doesNotMatch(security, /iod@kg\.straz\.gov\.pl/u);

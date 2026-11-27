@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Wydania aplikacji ALARM.SOIA: statusy kanałów testowych i sklepowych oraz najważniejsze zmiany w wersjach od 1.0.2 do 1.0.5.">
+  <meta name="description" content="Wydania aplikacji ALARM.SOIA: testy otwarte wersji 1.1.2, statusy kanałów sklepowych oraz najważniejsze zmiany w wersjach od 1.0.2 do 1.1.2.">
   <meta name="theme-color" content="#B42318">
   <title>Wydania — ALARM.SOIA</title>
   <link rel="canonical" href="https://kgpsp.github.io/alarm-soia-public/wydania">
@@ -26,10 +26,51 @@
   <main id="tresc" class="content">
     <header class="page-head"><h1>Wydania</h1><p class="lead">Kanały testowe i publikacja sklepowa mają oddzielne statusy. Poniższy zapis nie zastępuje bieżącego stanu w konsoli danego sklepu.</p></header>
 
-    <section class="status-grid" aria-label="Status kanałów na 25 września 2026">
-      <article class="status-card status-card--pending"><span class="status-label">Wycofana ze sprzedaży</span><h2>App Store (iPhone)</h2><p>Wersja 1.0.5 została zatwierdzona przez Apple i wydana 23 września 2026 r. w 27 państwach Unii Europejskiej, a 25 września 2026 r. wycofana ze sprzedaży decyzją wydawcy. Osoby, które zdążyły ją pobrać, zachowują aplikację; nowe pobrania nie są możliwe do czasu ponownego udostępnienia.</p></article>
-      <article class="status-card status-card--pending"><span class="status-label">Niepublikowana</span><h2>Google Play (Android)</h2><p>Wersja produkcyjna 1.0.5 została wysłana do przeglądu Google 22 września 2026 r.; 25 września 2026 r. dostępność aplikacji ustawiono na „wycofana” — po zakończeniu przeglądu aplikacja nie pojawi się w sklepie. Pozostaje dostępna wyłącznie dla testerów wewnętrznych.</p></article>
-      <article class="status-card status-card--observed"><span class="status-label">Wydanie testowe</span><h2>TestFlight i test wewnętrzny Google Play</h2><p>Ten sam build 1.0.5, który trafił do sklepów, jest nadal udostępniany testerom w TestFlight i na ścieżce wewnętrznej Google Play — bez paska APLIKACJA TESTOWA; ostrzeżenia ćwiczebne pozostają oznaczone słowem „ĆWICZENIE”.</p></article>
+    <section class="status-grid" aria-label="Status kanałów na 27 listopada 2026">
+      <article class="status-card status-card--observed"><span class="status-label">Test otwarty</span><h2>TestFlight (iPhone)</h2><p>Wersja 1.1.2 jest dostępna dla każdego, kto chce ją przetestować, przez publiczny link TestFlight: <a href="https://testflight.apple.com/join/nnwRz4sT">testflight.apple.com/join/nnwRz4sT</a>. Link zaczyna działać po akceptacji wersji testowej przez Apple — jeśli TestFlight pokazuje, że test nie przyjmuje jeszcze osób, spróbuj później. Jak dołączyć i co sprawdzić: <a href="./#testy">Jak dołączyć do testów</a>.</p></article>
+      <article class="status-card status-card--pending"><span class="status-label">Wkrótce</span><h2>Test otwarty Google Play (Android)</h2><p>Test otwarty wersji 1.1.2 w Google Play jest przygotowywany. Link do dołączenia pojawi się na tej stronie i na stronie głównej, gdy Google go udostępni.</p></article>
+      <article class="status-card status-card--pending"><span class="status-label">Wstrzymane</span><h2>App Store i Google Play — wydanie publiczne</h2><p>Dystrybucja w sklepach pozostaje wstrzymana od 25 września 2026 r. decyzją wydawcy. Wersja 1.0.5 została zatwierdzona przez Apple i wydana w App Store 23 września 2026 r. w 27 państwach Unii Europejskiej, a 25 września 2026 r. wycofana ze sprzedaży; osoby, które zdążyły ją pobrać, zachowują aplikację. W Google Play wersja produkcyjna 1.0.5 trafiła do przeglądu 22 września 2026 r., a 25 września 2026 r. jej dostępność ustawiono na „wycofana”, więc nie pojawiła się w sklepie. Testy otwarte nie są wydaniem publicznym.</p></article>
+    </section>
+
+    <section class="section" aria-labelledby="v112"><div class="section-heading"><h2 id="v112">Wersja 1.1.2 — 26 listopada 2026</h2><p>Wydanie „Twoje miejsca na mapie”: obserwowane obszary widać na mapie, Gotowość sprawdza więcej i pozwala wysłać próbne powiadomienie, a czytniki ekranu dostają pełniejsze komunikaty. Ta wersja trafia do testów otwartych.</p></div>
+      <ul>
+        <li>zakładka „Powiaty” nazywa się teraz „Obserwowane”, a jej lista — „Obserwowane obszary”;</li>
+        <li>na Mapie Twoje obserwowane powiaty i województwa mają wspólne oznaczenie obrysem, także bez internetu, a legenda ma pozycję „Twoje miejsce”;</li>
+        <li>arkusz Mapy ma sekcję „Twoje miejsca” ze stanem każdego miejsca — dotknięcie wiersza pokazuje obszar na mapie;</li>
+        <li>przycisk „Legenda” na zwiniętym arkuszu Mapy rozwija samą legendę; legenda mówi wprost, o których poziomach telefon powiadamia, a kiedy tego jeszcze nie wiadomo;</li>
+        <li>Gotowość: przycisk „Wyślij test powiadomienia” sprawdza, czy powiadomienie dociera do tego telefonu, i opisuje wynik po polsku;</li>
+        <li>Gotowość rozpoznaje tryb oszczędzania baterii, a na Androidzie także wstrzymywanie nieużywanej aplikacji — i prowadzi do właściwego ustawienia systemu;</li>
+        <li>gdy Android sam cofnie zgodę na powiadomienia nieużywanej aplikacji, baner „Włącz powiadomienia” pomaga ją przywrócić;</li>
+        <li>gdy telefon nie otworzy ustawień systemowych, aplikacja podpowiada, jak zrobić to ręcznie;</li>
+        <li>podniesienie poziomu ostrzeżenia jest ogłaszane jako „Podniesiono priorytet z … na …”, a nie jako nowe ostrzeżenie;</li>
+        <li>uruchomiona bez internetu aplikacja pokazuje dokładnie ostatnio pobraną listę ostrzeżeń z godziną sprawdzenia — ostrzeżenie, które już wygasło, nie wraca jako bieżące;</li>
+        <li>Mapa nie przestaje działać przy błędach mapy i sieci, po przywróceniu połączenia sama odświeża granice, a na Androidzie od razu zmienia się na ciemną albo jasną razem z motywem telefonu;</li>
+        <li>czytniki ekranu (VoiceOver, TalkBack): pełniejsze opisy kart ostrzeżeń, ogłaszanie błędów i ponowień, fokus wracający na nagłówek po zatrzymaniu syreny; przy dużym tekście przełączniki i komunikaty mieszczą się w całości.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="v111"><div class="section-heading"><h2 id="v111">Wersja 1.1.1 — 25 listopada 2026</h2><p>Wydanie „mapa w telefonie”: mapa ALARM.SOIA trafia do aplikacji i działa bez internetu.</p></div>
+      <ul>
+        <li>mapa ALARM.SOIA na podkładzie GUGiK jest zapisana w telefonie i działa także bez internetu — na iPhonie i na Androidzie (wcześniej iPhone pokazywał mapę systemową, a Android listę ostrzeżeń);</li>
+        <li>aplikacja jest przez to większa o około 250 MB;</li>
+        <li>wersja na Androida jest przygotowana do odbioru powiadomień push; uruchamianie powiadomień trwa, a niezależnie od nich otwarta aplikacja sprawdza ostrzeżenia co 30 sekund.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="v110"><div class="section-heading"><h2 id="v110">Wersja 1.1.0 — 24 listopada 2026</h2><p>Wydanie „mapa i dostępność”: nowa mapa, odczyt komunikatu na głos i wiele poprawek dla osób korzystających z czytników ekranu.</p></div>
+      <ul>
+        <li>nowa Mapa na iPhonie i Androidzie: wybór podkładu w Ustawieniach, przyciski przybliżania, nazwy poziomów przy znacznikach i arkusz ostrzeżeń, który można zwinąć i rozwinąć;</li>
+        <li>na ekranie alarmu przycisk „Przeczytaj” czyta komunikat na głos, a telefon wibruje przy pilnym ostrzeżeniu P2;</li>
+        <li>przycisk „Znajdź punkt schronienia” otwiera aplikację Gdzie się ukryć PL albo prowadzi do sklepu;</li>
+        <li>wyraźny pasek „ĆWICZENIE” albo „TEST” na górze alarmu ćwiczebnego i testowego;</li>
+        <li>podniesienie poziomu albo poszerzenie obszaru ostrzeżenia alarmuje jak nowe zagrożenie — z syreną przy P1 i wibracją przy P2;</li>
+        <li>otwarty alarm sam sprawdza co 30 sekund, czy nie został odwołany;</li>
+        <li>przed pierwszą odpowiedzią serwera aplikacja pokazuje „sprawdzam” albo brak połączenia, a nigdy fałszywy spokój;</li>
+        <li>godziny sprzed dzisiejszego dnia są opisane jako „wczoraj” albo datą;</li>
+        <li>przyciski Gotowości mówią, co naprawiają: „Wyłącz oszczędzanie baterii”, „Włącz wibracje”, „Pozwól alarmowi przebić wyciszenie”;</li>
+        <li>czytniki ekranu czytają skróty pełnymi słowami („województwo”, „powiat”), aplikacja na iPhonie mówi po polsku, a kontrast, etykiety i układ przy dużym tekście zostały poprawione;</li>
+        <li>nowa wersja środowiska aplikacji (Expo SDK 58).</li>
+      </ul>
     </section>
 
     <section class="section" aria-labelledby="v105"><div class="section-heading"><h2 id="v105">Wersja 1.0.5 — 21 września 2026</h2><p>Wydanie „kandydat publiczny”: pierwsza wersja bez oznaczenia testowego, przygotowana do przeglądu w sklepach. Bez zmian w logice ostrzeżeń i powiadomień.</p></div>
@@ -78,7 +119,7 @@
 
     <section class="section" aria-labelledby="znaczenie"><div class="section-heading"><h2 id="znaczenie">Jak czytać statusy</h2><p>„Build”, „test”, „wysłano do przeglądu”, „zatwierdzono” i „opublikowano” to różne kamienie milowe.</p></div>
       <div class="card-grid">
-        <article class="card"><span class="number">TEST</span><h3>TestFlight i test wewnętrzny</h3><p>Kanały testowe umożliwiają ocenę aplikacji przez wskazanych testerów, ale nie są równoznaczne z publicznym wydaniem produkcyjnym.</p></article>
+        <article class="card"><span class="number">TEST</span><h3>TestFlight i testy Google Play</h3><p>Kanały testowe umożliwiają ocenę aplikacji przed wydaniem — test wewnętrzny przez wskazanych testerów, test otwarty przez każdego, kto dołączy z publicznego linku. Żaden z nich nie jest równoznaczny z publicznym wydaniem produkcyjnym.</p></article>
         <article class="card"><span class="number">PRODUKCJA</span><h3>App Store i Google Play</h3><p>Wysłanie do przeglądu, akceptacja i faktyczna dostępność dla użytkowników w 27 państwach Unii Europejskiej są raportowane oddzielnie.</p></article>
       </div>
     </section>
