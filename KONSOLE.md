@@ -12,7 +12,7 @@ Adresy publiczne (strona na GitHub Pages, zweryfikowane 2026-09-16):
 | Polityka prywatności | `https://kgpsp.github.io/alarm-soia-public/polityka-prywatnosci` |
 | Pomoc / wsparcie | `https://kgpsp.github.io/alarm-soia-public/pomoc` |
 | Strona produktu / marketing | `https://kgpsp.github.io/alarm-soia-public/` |
-| E-mail wsparcia | `informacje@kg.straz.gov.pl` |
+| E-mail wsparcia | `pomoc@kg.straz.gov.pl` |
 | E-mail IOD (tylko polityka) | `iod@kg.straz.gov.pl` |
 
 ## A. Google Play Console (`data/google-play.json`, `data/google-play-declarations.json`)

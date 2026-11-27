@@ -3,7 +3,7 @@
 Nie publikuj danych osobowych, tokenów powiadomień, szczegółów podatności przed ich usunięciem ani
 informacji operacyjnych służb w publicznych Issues.
 
-Zgłoszenie bezpieczeństwa wyślij na `informacje@kg.straz.gov.pl` z tematem:
+Zgłoszenie bezpieczeństwa wyślij na `pomoc@kg.straz.gov.pl` z tematem:
 
 `ALARM.SOIA — bezpieczeństwo`
 

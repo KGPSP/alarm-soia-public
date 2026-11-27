@@ -3,7 +3,7 @@
   "zrodlo": "fakty z kodu aplikacji ALARM.SOIA 1.0.3 (odczyt 2026-09-16); podstawa polityki prywatności i deklaracji sklepowych",
   "host": "https://alarm.soia.info",
   "administrator": "Komendant Główny Państwowej Straży Pożarnej, ul. Podchorążych 38, 00-463 Warszawa",
-  "kontakt": "informacje@kg.straz.gov.pl",
+  "kontakt": "pomoc@kg.straz.gov.pl",
   "iod": "iod@kg.straz.gov.pl",
   "zadania": [
     { "id": "rejestracja-push", "metoda": "POST/PATCH/DELETE", "sciezka": "/api/public/devices/{token}", "pola": ["token push (APNs lub FCM)", "platforma (ios/android)", "environment (development/production)", "wersja aplikacji (appVersion)", "lista kodów TERYT obserwowanych obszarów (terytList)", "priorytety, o których powiadamiać (priorities)"], "cel": "doręczanie powiadomień push o ostrzeżeniach dla wybranych obszarów", "retencja": "do usunięcia na wniosek do IOD albo w ramach porządkowania nieaktywnych rejestracji (okres do ustalenia przez administratora); w wersji 1.0.3 aplikacja nie ma kontrolki cofnięcia zgody wysyłającej DELETE; serwer nie tworzy konta użytkownika" },
